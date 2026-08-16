@@ -7,3 +7,5 @@ nav:
   - Update 1: firstupdate.md
   - Update 2: secondupdate.md
   - Update 3: thirdupdate.md
+plugins:
+    - mkdocs-video
