@@ -2,10 +2,10 @@ site_name: "Glaciereon's Doc"
 theme:
   name: terminal
 nav:
-  - Home: homepage.md
-  - Getting Started: index.md
+  - Welcome: homepage.md
   - Update 1: firstupdate.md
   - Update 2: secondupdate.md
   - Update 3: thirdupdate.md
+  - Reference Sheet: index.md
 plugins:
     - mkdocs-video

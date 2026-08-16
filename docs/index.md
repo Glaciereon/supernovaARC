@@ -1,4 +1,4 @@
-# Welcome to MkDocs
+# Mkdocs Ref Sheet
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
