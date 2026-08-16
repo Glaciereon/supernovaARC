@@ -1,6 +1,8 @@
 site_name: "Glaciereon's Doc"
 theme:
   name: terminal
+  features:
+    - navigation.side.toc.hide
 nav:
   - Home: homepage.md
   - Getting Started: index.md
