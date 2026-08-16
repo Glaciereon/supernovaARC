@@ -1,4 +1,4 @@
 # Progress Update #3
 We have decided to bite the bullet and construct an entire rocket to test the effectiveness of the reefing design. It would have been much more preferred to use a small-scale prototype, but with significant time constraints (my teammate’s college departure) production has been rushed to making a full rocket with the integrated reefing mechanism. The first step in the construction of this rocket, as always, is to plug in basic parameters into the software OpenRocket, which will calculate/approximate basic stability and apogee details. 
 
-![openrocketimage](images/openRocketReefing)
+![openrocketimage](images/openRocketReefing.png)
