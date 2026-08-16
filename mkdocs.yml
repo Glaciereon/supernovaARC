@@ -3,3 +3,10 @@ theme: material
 palette:
     primary: black
     accent: blue
+nav:
+  - Home: homepage.md
+  - Getting Started: index.md
+  - Update 1: firstupdate.md
+  - Update 2: secondupate.md
+  - Update 3: thirdupdate.md
+  
