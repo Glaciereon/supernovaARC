@@ -1,6 +1,6 @@
 site_name: "Glaciereon's Doc"
 theme:
-  name: mkdocs-terminal
+  name: terminal
 nav:
   - Home: homepage.md
   - Getting Started: index.md
