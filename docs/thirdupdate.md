@@ -7,4 +7,4 @@ The most crucial details when designing a basic rocket like this are the weights
 
 The aerodynamic stability of the rocket, measured in calibers, is approximately 1.52, which is considered well within the ‘sweet spot’ of 1-2 calibers for model rockets to both remain . This value simply measures how many rocket body (body tube) diameters the center of gravity is ahead of the center of pressure. This value is important as it ensures the rocket won’t tumble due to being under stable or ‘weathercock’ (turn into the wind due to stability being too high). The intuitive explanation can be given through this NASA model rocketry diagram: 
 
-![nasaweathercockimage](images/nasaWeatherCock.jpeg)
+![nasaweathercockimage](images/nasaWeatherCock.jpeg)    

@@ -1,3 +1,3 @@
 # Welcome to Project Supernova/Project Coral!
 
-![Aesthetic Image](images/aestheticlaunch.jpg)
+![Aesthetic Image](images/supernovaMechanism.png)
