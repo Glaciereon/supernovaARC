@@ -3,7 +3,7 @@
 8/10/26
 
 
-![type:video](videos/droptestone.mov)
-![type:video](videos/droptesttwo.mov)
+![type:video](./videos/droptestone.mov)
+![type:video](./videos/droptesttwo.mov)
 
 Over the past few days progressively more work has been done. There have been a few drop tests done with the prototyped design off the 30ft tower, but a huge problem remains. The drop was only about 2 seconds, even fully expanded out - this means that we would need a grossly larger tower in order to see any meaningful differences with the reefing mechanism, or we have to do something with a much higher chance of failure: Sending a rocket up with the mechanism (to an incredibly tall height around 1000ft) and then measuring the much more significant descent time differences there. This will provide much more information but will also need much more development, including the construction of a whole new non-guided rocket and coordinating a launch. Avoiding this would be better but unfortunately we are under a significant time crunch, and we need to know whether this design is even close to working so this may be our only solution. Other problems include the parachute being somewhat fragile - the shroud lines we attached are put into grommets, which have a nonzero chance of tearing through the fabric. Manufactured parachutes have the luxury of advanced threading and gluing techniques to avoid weak joints, which we are (as of yet) unable to replicate and instead have a crude system of additional grommets that we are connecting the shrouds to. 
