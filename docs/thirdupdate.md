@@ -21,3 +21,39 @@ Once the fin can was modeled, it was printed out of basic PLA and then epoxied o
 ![projectcoraltransitionside](images/projectcoraltransitionSIDE.png)
 
 It can be noted that the transition looks quite unique, with a 'channel' running down the side and a small hook section that leans into the body of the rocket. This was done intentionally, so that the line of the shock cord would be less tangled with the parachute itself or associated shroud lines prior to the two halves separating from the ejection charge. It also allowed for us to mount the servo in a vertical fashion (with the axis of rotation being in line with the body tubes), as the dimensions of the servo would have made it difficult to fit in any other orientation. To make the string naturally collect on the spool due to gravity, this resulted in a requirement of horizontal feeding. The spool, naturally, has raised edges as to prevent the shock cord from slipping off during winching. 
+
+Here is the progression of the various winch designs we tried before settling on the final circular design. Due to the size of the servo, the placement of the winch had to be slightly off-center (the drive shaft of the center is not centered, and the servo could not be fit into the BT80 in such a way to make it as such). 
+
+# PHOTOS OF WINCHES
+
+I also soldered a simple circuit for this. It has very similar components to our earier "Superova" project. It includes the Arduino Nano Every, the Verter 3-5V Buck Boost (required for the LiPo that provides 3.7V to the operating voltage of 5V on the Nano), 2200 microfarad capacitor (for the servo to not cause severe supply voltage drop from current spike), the classic BMP390 barometric pressure sensor for altitude/velocity/acceleration calculations, and the aforementioned 3.7V LiPO (2000mAh). We also used a small piece of a breadboard in order to wire all of these connections together instead of using wired junctions, as there have been incidents in the past where these connections fail or are difficult to add new components to. It is important to note that an SD reader was not used this time, considered unneeded, so all flight data had to be stored on the on-board EEPROM. For the Nano this is a ridiculously small 256 BYTES, meaning all non-essential information must not be tracked. This meant we only tracked the rockets velocity immediately following the start of the winching (during descent), and did not track altitude on the way up, deemed unecessary for this test. 
+
+# WIRING DIAGRAM
+
+# PICTURE OF FINISHED WIRING
+
+Finally, we had finished all essential parts of this project. A few days before the departure of my close friend, teammate, and lead programmer, on August 15th, we decided to perform a launch. 
+
+# Selfie of both of us in front of car
+
+# Picture of loaded up car
+
+We arrived onto the launch field in Acton, set up the launch rail, and loaded the program onto the Nano. 
+
+# Picture of Nano with cable sticking out and half of the mechanism just out there
+
+This is crucial due to the drift that the barometric pressure sensor experiences. Additionally, it is best for the program to be started on the launch site, as the battery does not last forever and the initial temperature benchmark (done by the BMP) should be based on external temp instead of temp inside the car or other location. In short, the final software upload has become a ritual of our launches. 
+
+And we're off! We set up the rocket on the launch rail, and counted down the seconds to ascertain the summers worth of work following our failure to qualify for ARC. 
+
+*I apologize for the exclamations, I was quite excited to see this launch.*
+
+# VIDEO OF LAUNCH
+
+# VIDEO OF ROCKET COMING DOWN
+
+Though it is difficult to tell from this video, it was far clearer in the field that the parachute slowly experienced radial contraction as the ratio of height of parachute to radius increased. This can be confirmed with the flight data, which monitored the speed of the rockets descent. The x-axis represents seconds after the winching mechanism was enabled. 
+
+# GRAPH OF SPEED OF ROCKET 
+
+This graph is slightly wonky, evidently - the peaks and drops are because the speed was rounded to the nearest integer in m/s due to the limited space (256 bytes!). However, the speed of descent the rocket initially was around 2m/s, and with the winching it quickly dropped to 4 before stabilizing around 5.5m/s. This is a 175% increase in descent speed, which I deem to be quite succesful. One of the fins unfortunately suffered a crack as a result of this due to being printed out of regular PLA, but if it was printed out of nylon or carbon fiber-reinforced materials the impact would not have been substantial. The electronics were all functioning perfectly, and the ~60g egg we had placed inside to simulate ARC conditions had also not cracked. In summary, this test was incredibly succesful.

@@ -1,11 +1,16 @@
 site_name: "Glaciereon's Doc"
+
 theme:
   name: terminal
+
 nav:
   - Welcome: homepage.md
-  - Update 1: firstupdate.md
-  - Update 2: secondupdate.md
-  - Update 3: thirdupdate.md
-  - Reference Sheet: index.md
+
+  - Project Coral:
+      - Update 1: firstupdate.md
+      - Update 2: secondupdate.md
+      - Update 3: thirdupdate.md
+      - Next Steps: nextsteps.md
+
 plugins:
-    - mkdocs-video
+  - mkdocs-video
