@@ -7,10 +7,10 @@ nav:
   - Welcome: homepage.md
 
   - Project Coral:
-      - Update 1: firstupdate.md
-      - Update 2: secondupdate.md
-      - Update 3: thirdupdate.md
-      - Next Steps: nextsteps.md
+      - Update 1: coral/firstupdate.md
+      - Update 2: coral/secondupdate.md
+      - Update 3: coral/thirdupdate.md
+      - Next Steps: coral/nextsteps.md
 
 plugins:
   - mkdocs-video
