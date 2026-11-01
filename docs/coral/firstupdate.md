@@ -4,11 +4,11 @@ The project has been in the works for about a month or so now. The initial probl
 
 
 ## Conceptual Solution
-The current theoretical solution thus far has been threading a Kevlar string (typically used for shock cord) around the circumference of the parachute, and then winching in that string with a servo onboard the rocket in order to effectively decrease circumference of the parachute → lowering surface area → decreasing descent time. This would then be controlled by the onboard avionics which would attempt to predict, after a few seconds of coasting, if the rocket will touch down to the ground at the required time (safely). There will likely be a ‘hard stop’ in the code which will prevent the rocket from shattering upon descent.
+The current theoretical solution thus far has been threading a Kevlar string (typically used for shock cord) around the circumference of the parachute, and then winching in that string with a servo onboard the rocket in order to effectively decrease circumference of the parachute → lowering surface area → decreasing descent time. There would be some sort of spool or other such interface to contain the extra thread. This would then be controlled by the onboard avionics which would attempt to predict, after a few seconds of coasting, if the rocket will touch down to the ground at the required time (safely). There will likely be a ‘hard stop’ in the code which will prevent the rocket from shattering upon descent.
 
 
 ## Current Steps
-The current step in development is creating an overkill proof of concept. A simple payload with space for a 27 kg/cm servo (which in itself weighs approx 70g, quite heavy for our needs) has been CADded and printed out of lightweight PLA. The winch went through multiple iterations, starting with an ellipsoidal cross section a few times before I realized that it would result in uneven thread pull, before finally landing on a spool thread-like design (after further reflection, this makes by far the most sense and it is strange that I decided against it initially). 
+The current step in development is creating an overkill proof of concept. A simple payload with space for a 35 kg/cm servo (which in itself weighs approx 70g, quite heavy for our needs) has been CADded and printed out of lightweight PLA. The winch went through multiple iterations, starting with an ellipsoidal cross section a few times before I realized that it would result in uneven thread pull, before finally landing on a spool thread-like design (after further reflection, this makes by far the most sense and it is strange that I decided against it initially). 
 
 ![servoImage](../images/servoimage.jpeg)
 *35 kg/cm servo, quite strong*

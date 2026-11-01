@@ -16,14 +16,14 @@ theme:
 
 nav:
   - Welcome: index.md
+  - Project Supernova:
+    - Year 1: supernova/supernovayear1.md
+    - Year 2: supernova/supernovayear2.md
   - Project Coral:
       - Update 1: coral/firstupdate.md
       - Update 2: coral/secondupdate.md
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
-  - Project Supernova:
-      - Year 1: supernova/supernovayear1.md
-      - Year 2: supernova/supernovayear2.md
   - CODEBASE NOTE PLEASE READ: code/codebase.md
   - Supernova Code Y1:
       - v1: code/supernovafirstyear/e01.md

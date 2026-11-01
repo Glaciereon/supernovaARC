@@ -10,4 +10,4 @@ The most recent progress has been in the form of testing. There have been a few 
 
 Additionally these are some videos testing the parachute lines on the ground with a fan, as a form of 'portable wind tunnel'. These tests had varied success, particularly due to the rotational wind patterns that resulted in the shroud lines slowly twisting. However, they showed with a (somewhat) continous air pressure, 'pulling' in the parachute resulted in a reduction in circumference rather than the parachute just being pulled closer to the rocket. 
 
-# VIDEO OF TEST
+![type:video](../videos/parachutetesting.mp4)

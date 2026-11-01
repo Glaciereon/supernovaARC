@@ -1,5 +1,8 @@
 # Supernova Year 2
 
+
+## Again the same note that this documentation was made AFTER the year ended.
+
 This year had many progressions as compared to the first year. We learned that in principal, the design does work, but there are numerous issues we ran into that we have to address. First off, the rubber-band design with the push rod is not the best way to achieve separation between the two rockets. The other idea we've had is to use springs around the circumference of the transition instead, allowing for cleaner separation and making sure the parachute does not get stuck since it is stored in the bottom half of the body tube. 
 Early iterations of our rocket had issues with slanted trajectories, electronics working unexpectedly, and the coupler not separating properly. To solve these issues, we made these major adjustments. This is a simple list of the major things we changed and improved upon. 
 
