@@ -11,6 +11,27 @@ nav:
       - Update 2: coral/secondupdate.md
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
-
+  - code:
+  - codebase.md
+    - supernovafirstyear:
+        
+    - supernovasecondyear:
+        - supernova1.md
+        - supernovafakedatasim.md
+        - teensysdstates.md
+        - menulogging.md
+        - v5ishcleanup.md
+        - kalmanbluetooth.md
+        - v7kalmanrework.md
+        - v8kalmanconstant.md
+        - v9csvlogging.md
+        - v10bailout.md
+    
+    - reefcode:
+      - supernovav1.md
+      - supernovav2.md
+      - supernovav3.md
+      - coraltestcode.md
+      - corallaunchcode.md
 plugins:
   - mkdocs-video

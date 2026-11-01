@@ -1,0 +1,595 @@
+# v06_kalman_bluetooth
+
+```cpp
+//v6: big jump: kalman filter for height and velocity, bluetooth, an on ground menu with a prime rocket step, and a model that predicts when to release the servo.
+
+//STILL need to do the tests with the sensor. Flags left in setup sensor
+// in the future have a flag that indicates wheather the card is open or closed
+
+#include <Wire.h>
+#include <SPI.h>
+#include <Adafruit_Sensor.h>
+#include "Adafruit_BMP3XX.h"
+#include <Servo.h>
+#include <SD.h>
+#include <BasicLinearAlgebra.h>
+
+using namespace BLA;
+
+Adafruit_BMP3XX bmp;
+Servo myServo;
+File myFile;
+
+struct DataPoint {
+  float height_m;
+  float time_s;
+  float velocity_m;
+  float rawHeight_m;
+
+  void printTo(Print &out) const {
+    out.print("Raw height: ");
+    out.print(rawHeight_m, 4);
+    out.print("Height: ");
+    out.print(height_m, 4);
+    out.print(", Time: ");
+    out.print(time_s, 4);
+    out.print(", Velocity: ");
+    out.println(velocity_m, 4);
+  }
+};
+
+#define SD_CS 10  
+#define SERVO_PIN 4
+#define BLUETOOTH_ON 1
+#define SEALEVELPRESSURE_HPA (1013.25)
+#define TARGET_APOGEE (228.58)
+#define LAUNCH_HEIGHT_M (10)
+#define SEPERATION_HEIGHT_M (219) //from sim
+#define DEFAULT_LOCKED_POSITION_DEG (90)
+#define DEFAULT_UNLOCKED_POSITION_DEG (0)
+#define MAX_SEPERATION_TIME_S (6)
+#define FLUSH_COUNT (10)
+
+#define TIME_FOR_PARACHUTE_TO_OPEN (.5)
+#define MASS_KG (.610)
+#define K (0.000346)
+#define DISTANCE_TRAVELLD_W_PARACHUTE_OPEN_M (-1)
+#define BASE_VARIANCE (.28) //variance in the height data
+#define ACCELERATION_UNCERTAINTY (20) //idk really
+
+byte state = 0;
+bool locked = false;
+bool cardOpen = false;
+int lockedPositionDeg = 90;
+int unlockedPositionDeg = 0;
+int dataPointIndex = 0;
+float dataRecordingTimeInit_s = .0067;
+float height0M = 0;
+float apogee = 0;
+String fileName = "default.txt";
+DataPoint dataPoints[FLUSH_COUNT];
+
+Matrix<2,1> State; /* state matrix; 
+H_k kalmanized height
+V_k kalmanized velocity
+*/
+Matrix<2,2> sensorCovarience; /* how the variances relate together eg. if height is underestimated what does that mean about velocity
+stdH^2 covariance
+covariance dtdV^2
+*/
+Matrix<2,2> Transition; /* transition matrix
+1 dt (dt is time between current kalmanized sample and next data sample)
+0 1 
+*/
+Matrix<2,2> ModelVarience; /* model varaince matrix how wrong is my model (not accounting for accleration 🤣)
+stdH^2 0 
+0 dtdV^2
+*/
+Matrix <1,2> Measurement;/* Measurement matrix
+height_from_sensor 0 (not measuring velocity)
+*/
+Matrix <1,1> R; /* sensor noise measured on the ground (it's a matrix since it's esier to do operations that way)
+R
+*/
+Matrix <2,1> KalmanGain; /* matrix storing coefficients for how off the model was vs the acuall sensor measurements
+height_coefficient velocity_coefficient
+*/
+Matrix <2,2> I; //you're cooked if you don't know this
+
+enum States {onGround = 0, preLaunch = 1, preSeparation = 2, postSeparation = 3};
+
+void setup() {
+
+  State = {0,
+           0};
+
+  sensorCovarience = {
+           1, 0,
+           0, 1
+  };
+  Transition = {
+           1, .02, //the 02 is a placeholder here for the acuall dt
+           0, 1
+  };
+  Measurement = {
+            1, 0
+  };
+  ModelVarience = {
+           1, 0,
+           0, 1
+  };
+  R = {BASE_VARIANCE};
+  I = {    1, 0,
+           0, 1
+  };
+  
+  Serial.begin(115200);
+  Serial1.begin(9600); //don't change, this is the standard
+
+  printBoth("Program start");
+  printBoth("The rocket will seperate at ");
+  printBoth(SEPERATION_HEIGHT_M);
+  printBoth(" meters, start recording data at ");
+  printBoth(LAUNCH_HEIGHT_M);
+  printBoth(" meters, automatically unlock at ");
+  printBoth(MAX_SEPERATION_TIME_S);
+  printBoth(" seconds, and servo locked and unlocked positions are ");
+  printBoth(lockedPositionDeg);
+  printBoth(unlockedPositionDeg);
+  printBoth(" degrees respectively.");
+  printBoth("Seperation height, launch height, and max seperation time can't be changed. The rest can be using the functions provided");
+
+  setupServo();
+  setupSDCard();
+  setupSensor();
+
+  for (int i = 0; i<5; i++) {
+    getHeight();
+    delay(30);
+  }
+
+  for (int i = 0; i < FLUSH_COUNT; i++) {
+  dataPoints[i].time_s = 0.1;
+  dataPoints[i].height_m = 0.1;
+  dataPoints[i].rawHeight_m = 0.1;
+  dataPoints[i].velocity_m = 0.1;
+  }
+
+  printBoth("Setup complete, gl");
+  printBoth(BLUETOOTH_ON ? "Using bluetooth" : "Using serial");
+}
+
+void loop() {
+ static unsigned long nextSample_us = micros(); //static means global variable within a function.
+  if (micros() >= nextSample_us) {
+    nextSample_us += 30000; //30 ms
+    switch (state) {
+      case onGround:
+        onGroundCycle();
+        break;
+      case preLaunch:
+        preLaunchCycle();
+        break;
+      case preSeparation:
+        preSeparationCycle();
+        break;
+      case postSeparation:
+        postSeparationCycle();
+        break;
+    }
+  }
+}
+
+void onGroundCycle() {
+  printBoth("Select operation");
+  int answer = scanner().toInt();
+  switch (answer) {// 1 - rotate 2 - reinitialize height_0 3 - input locked and unlocked positions 4 - input card name 5 - prime rocket
+    case 1:
+      rotateServo();
+      break;
+    case 2:
+      initializeHeight0M();
+      break;
+    case 3:
+      adjustServoPos();
+      break;
+    case 4:
+      inputCardName();
+      break;
+    case 5:
+      primeRocket();
+      // we don't break
+  }
+}
+
+void preLaunchCycle() {
+    float h = getHeight();
+  
+    if (h > LAUNCH_HEIGHT_M) {
+      myFile = SD.open(fileName.c_str(), FILE_WRITE); //reopens the file
+      cardOpen = true;
+      state = preSeparation;
+      myFile.println("Launch began at this many seconds");
+      dataRecordingTimeInit_s = millis() / 1000.0f;
+      myFile.println(dataRecordingTimeInit_s);
+      return;
+    }
+    //printBoth(h);
+}
+
+void preSeparationCycle() { //where the magic happens i'm crine
+    DataPoint currentPoint;
+    currentPoint.rawHeight_m = getHeight();
+    currentPoint.time_s = millis()/1000.0f - dataRecordingTimeInit_s;
+    dataPoints[dataPointIndex] = currentPoint;
+    updateMatrices();
+    bool validReleaseHeight = dataPoints[dataPointIndex].height_m + deltaHMparachuteopening() + deltaHMparachuteopened() >= TARGET_APOGEE;
+    bool withinTimeWindow = (millis() / 1000.0f - dataRecordingTimeInit_s) > MAX_SEPERATION_TIME_S;
+    if (validReleaseHeight || withinTimeWindow) {
+      //myFile = SD.open(fileName.c_str(), FILE_WRITE); //reopens the file
+      myServo.write(unlockedPositionDeg);//the soul purpose of this program
+      if (myFile) {
+        myFile.print("Servo started turning at this many seconds: ");
+        myFile.println(millis()/1000.0f - dataRecordingTimeInit_s); // this gon come out rong since i haven't flushed the data yet
+      }
+      //myFile.close();
+      state = postSeparation;
+    }
+
+    dataPointIndex++;
+    if (dataPointIndex == FLUSH_COUNT) {
+      dataPointIndex = 0;
+      if (myFile) {
+        for (int i = 0; i<FLUSH_COUNT; i++) {
+        dataPoints[i].printTo(myFile);
+        }
+      }
+      myFile.flush();
+    }
+}
+
+void postSeparationCycle() {
+  DataPoint currentPoint;
+  currentPoint.rawHeight_m = getHeight();
+  currentPoint.time_s = millis()/1000.0f - dataRecordingTimeInit_s;
+  dataPoints[dataPointIndex] = currentPoint;
+  updateMatrices();
+
+  if (dataPoints[dataPointIndex].height_m > LAUNCH_HEIGHT_M) {
+    dataPoints[dataPointIndex] = currentPoint;
+
+    dataPointIndex++;
+    if (dataPointIndex == FLUSH_COUNT) {
+      dataPointIndex = 0;
+      if (myFile) {
+        for (int i = 0; i<FLUSH_COUNT; i++) {
+        dataPoints[i].printTo(myFile);
+        }
+      }
+      myFile.flush();
+    }
+  } else {
+    if (dataPointIndex > 0) {
+      if (myFile) {
+        for (int i = 0; i < dataPointIndex; i++) {
+          dataPoints[i].printTo(myFile);
+        }
+        
+        myFile.flush();
+      }
+      dataPointIndex = 0;
+    }
+    if (cardOpen) {
+      myFile.close();
+    }
+    printBoth("The apogeee in meters: ");
+    printBoth(apogee);
+  }
+}
+
+/*
+helper function: returns a string of user input
+*/
+String scanner() {
+
+  Stream &port = BLUETOOTH_ON ? Serial1 : Serial; // polymorphism 🤑🤑 compsci acually coming in handy
+
+  while (port.available() == 0) {
+    delay(5);
+  }
+
+  String response = port.readStringUntil('\n');
+  response.trim();
+  return response;
+}
+
+void printBoth(const char *msg) {
+  Serial.println(msg);
+  if (BLUETOOTH_ON) {
+    Serial1.println(msg);
+  }
+}
+
+void printBoth(float value) {
+  Serial.println(value);
+  if (BLUETOOTH_ON) {
+    Serial1.println(value);
+  }
+} // OVERLOADED FUNCTIONS 😍😍😍 this is for efficiency
+
+float getHeight() {
+  /*
+    if (!bmp.performReading()) {
+      
+    myFile = SD.open(fileName.c_str(), FILE_WRITE);
+    Serial.println("BMP read failed");
+      
+    if (error) {
+      myFile.println("BMP read failed at ");
+      myFile.println(millis());
+      myFile.println(" after launch");
+      myFile.close();
+      error = false;
+    }
+    
+    return prevHeight_m; // fallback: return last valid height
+   }
+  
+  float h = (bmp.readAltitude(SEALEVELPRESSURE_HPA) - height0)*FILTER_COEFFICIENT  + prevHeight_m*(1-FILTER_COEFFICIENT );// h = current*c + previous*(1-c)
+  prevHeight_m = h;
+  return h;*/
+  return bmp.readAltitude(SEALEVELPRESSURE_HPA) - height0M;
+}
+
+void setupServo() {
+  myServo.attach(SERVO_PIN);
+  printBoth("Servo attached. Position:");
+  printBoth(myServo.read());
+}
+
+void setupSDCard() {
+  bool cardStatus = (SD.begin(SD_CS));
+  printBoth(cardStatus ? "Card initialized" : "Initialization failed");
+
+    printBoth("Input file name! Send ('n') if using default (make sure to include the .txt :)");
+    String s = scanner();
+    if (s != "n") {
+      fileName = s;
+    }
+
+  if (SD.exists(fileName.c_str())) {
+    printBoth("Ts name already exists. Be cautious");
+  }
+  //myFile = SD.open(fileName.c_str(), FILE_WRITE);
+  //cardOpen = true;
+  //printBoth(myFile ? "File initialized succesfully" : "Failed to create File");
+
+  /*if (myFile) {
+    printBoth("File name: ");
+    printBoth(myFile.name());
+    
+    myFile.print("\nFile named ");
+    myFile.println(myFile.name());
+  }
+
+  myFile.close(); // this is for the file's safety
+  cardOpen = false;*/
+
+}
+
+void setupSensor() {
+  printBoth("Setting up sensor: ");
+  printBoth("Adafruit BMP390 test");
+
+  bool bmp_I2C_init = bmp.begin_I2C();
+  printBoth("BMP390 I2C initialization: ");
+  printBoth(bmp_I2C_init ? "Doing the most" : "FAIL: Could not find a valid BMP3 sensor, check wiring!");
+
+  // Configure sensor
+  bmp.setTemperatureOversampling(BMP3_OVERSAMPLING_4X);
+  bmp.setPressureOversampling(BMP3_OVERSAMPLING_4X);
+  bmp.setIIRFilterCoeff(BMP3_IIR_FILTER_COEFF_3);
+  bmp.setOutputDataRate(BMP3_ODR_50_HZ);
+
+  bool bmp_read = bmp.performReading();
+  printBoth("Sensor read: ");
+  printBoth(bmp_read ? "SUCCESS" : "FAIL: BMP390 not producing data");
+
+  int avgSampleCnt = 20;
+  printBoth("Warming and clearing sensor for ");
+  printBoth(2*avgSampleCnt*30);
+  printBoth(" ms");
+  
+  for (int i = 0; i<avgSampleCnt; i++) { //warms up the sensor's oversampling
+    bmp.performReading();
+    height0M = bmp.readAltitude(SEALEVELPRESSURE_HPA);
+    delay(30); //⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ magic number
+  } 
+  height0M = 0.0f; //lmao
+    
+  for (int i = 0; i<avgSampleCnt; i++) { // gets average of og height
+    bmp.performReading();
+    height0M += (1.0f/avgSampleCnt) * bmp.readAltitude(SEALEVELPRESSURE_HPA);
+    delay(30);
+  }
+  printBoth(height0M);
+  
+  printBoth("Sample reading:");
+  printBoth("-------------------------- Initial Sample");
+  printBoth("Temperature: ");
+  printBoth((int)bmp.temperature);
+  printBoth(" C");
+  printBoth("Pressure: ");
+  printBoth((int)(bmp.pressure / 100.0));
+  printBoth(" hPa");
+  printBoth("Altitude (std atm): ");
+  printBoth((int)bmp.readAltitude(SEALEVELPRESSURE_HPA));
+  printBoth(" m");
+  printBoth("-------------------------------");
+}
+
+void rotateServo() {
+  if (locked) {
+        myServo.write(unlockedPositionDeg);
+        printBoth("Servo unlocked, degree position: ");
+        locked = false;
+      } else {
+        myServo.write(lockedPositionDeg);
+        printBoth("Servo locked, degree position: ");
+        locked = true;
+      }
+      delay(200);
+      printBoth("Servo position: ");
+      printBoth(myServo.read());
+      delay(800);
+}
+
+void initializeHeight0M() {
+  printBoth("Old height_0: ");
+  printBoth(height0M);
+  height0M = 0;
+  int avgSampleCnt = 20;
+  for (int i = 0; i<avgSampleCnt; i++) { // gets average of og height
+    bmp.performReading();
+    height0M += (1.0f/avgSampleCnt) * bmp.readAltitude(SEALEVELPRESSURE_HPA);
+    delay(30);
+  }
+  printBoth("New height_0: ");
+  printBoth(height0M);
+}
+
+void adjustServoPos() {
+  printBoth("Experiment with locking and unlocking the servo. remember the degree values of locked and unlocked stage\nsend done when done");
+  String response = scanner();
+  while (response != "done") {
+    myServo.write((response.toInt() % 180 + 180) % 180); //legacy code yesir
+    response = scanner();
+  }
+  
+  printBoth("input locked position: ");
+  lockedPositionDeg = scanner().toInt();
+
+  printBoth("input unlocked position: ");  
+  unlockedPositionDeg = scanner().toInt();
+
+  printBoth("Done!");
+}
+
+void inputCardName() {
+  printBoth("Input file name: (lowercase letters, numbers, and _'s allowed only)");
+  fileName = scanner();
+  fileName.trim();
+  if (SD.exists(fileName.c_str())) {
+      printBoth("Ts name already exists. Be cautious");
+  }
+  
+  //myFile = SD.open(fileName.c_str(), FILE_WRITE);
+  //cardOpen = true;
+  //printBoth(myFile ? "File initialized succesfully" : "Failed to create File");
+
+  /*if (myFile) {
+    printBoth("File name: ");
+    printBoth(myFile.name());
+    
+    myFile.print("\nFile named ");
+    myFile.println(myFile.name());
+  }
+
+  myFile.close(); // this is for the file's safety
+  cardOpen = false;*/
+}
+
+void primeRocket() {
+  if (SD.exists(fileName.c_str())) {
+    printBoth("Ts name already exists. Be cautious");
+  }
+
+  myFile = SD.open(fileName.c_str(), FILE_WRITE);
+  cardOpen = true;
+  printBoth(myFile ? "File initialized succesfully" : "Failed to create File");
+  
+  if (myFile) {
+    printBoth("\nFile named ");
+    printBoth(myFile.name());
+    printBoth("CONFIG | Separation height (m): ");
+    printBoth(SEPERATION_HEIGHT_M);
+    printBoth(", Launch height (m): ");
+    printBoth(LAUNCH_HEIGHT_M);
+    printBoth(", Max separation time (s): ");
+    printBoth(MAX_SEPERATION_TIME_S);
+    printBoth("Locked position in degrees is: ");
+    printBoth(lockedPositionDeg);
+    printBoth("Unlocked position in degrees is: ");
+    printBoth(unlockedPositionDeg);
+    printBoth(", Status: READY");
+    
+    myFile.print("\nFile named ");
+    myFile.println(myFile.name());
+    myFile.print("CONFIG | Separation height (m): ");
+    myFile.println(SEPERATION_HEIGHT_M);
+    myFile.print(", Launch height (m): ");
+    myFile.println(LAUNCH_HEIGHT_M);
+    myFile.print(", Max separation time (s): ");
+    myFile.println(MAX_SEPERATION_TIME_S);
+    myFile.print("Locked position in degrees is: ");
+    myFile.println(lockedPositionDeg);
+    myFile.print("Unlocked position in degrees is: ");
+    myFile.println(unlockedPositionDeg);
+    myFile.println(", Status: READY");
+  }
+
+  if (!myFile) {
+    printBoth("Couldn't write config data");
+  } else {
+    printBoth("Rocket primed. see you on the other side");
+    state = preLaunch;
+  }
+
+   myFile.close();
+   cardOpen = false;
+}
+//I'm so excited; this is the coolest thing I've ever made
+
+void updateMatrices() {
+  float dt = dataPoints[dataPointIndex].time_s - ((dataPointIndex == 0) ? dataPoints[FLUSH_COUNT - 1].time_s : dataPoints[dataPointIndex - 1].time_s);
+  float heightMeasured = dataPoints[dataPointIndex].rawHeight_m;
+
+  float dt2 = dt * dt;
+  float dt3 = dt2 * dt;
+  float dt4 = dt3 * dt;
+  Transition(0,1) = dt;
+  ModelVarience = {
+    dt4/4.0 * ACCELERATION_UNCERTAINTY * ACCELERATION_UNCERTAINTY,  dt3/2.0 * ACCELERATION_UNCERTAINTY * ACCELERATION_UNCERTAINTY,
+    dt3/2.0 * ACCELERATION_UNCERTAINTY * ACCELERATION_UNCERTAINTY,  dt2     * ACCELERATION_UNCERTAINTY * ACCELERATION_UNCERTAINTY
+  };
+  Matrix <1,1> MeasurementPoint = heightMeasured;
+
+  State = Transition * State;
+  sensorCovarience = Transition * sensorCovarience * ~Transition + ModelVarience;
+  Matrix <1,1> Residual = MeasurementPoint - Measurement * State;
+  Matrix <1,1> Innovation = Measurement * sensorCovarience * ~Measurement + R;
+  KalmanGain = sensorCovarience * ~Measurement * Inverse(Innovation);
+
+  State = State + KalmanGain * Residual;
+  sensorCovarience = (I - KalmanGain * Measurement) * sensorCovarience;
+
+  dataPoints[dataPointIndex].height_m = State(0,0);
+  dataPoints[dataPointIndex].velocity_m = State(1,0);
+
+  if (dataPoints[dataPointIndex].height_m > apogee) {
+    apogee = dataPoints[dataPointIndex].height_m;
+  }
+}
+
+float deltaHMparachuteopening() {
+  float t = TIME_FOR_PARACHUTE_TO_OPEN;
+  float v = dataPoints[dataPointIndex].velocity_m;
+  float m = MASS_KG;
+
+  return v * t - .5 * 9.81 * t * t - (K * v * v * t * t)/(2 * m);
+}
+
+float deltaHMparachuteopened() {
+  return DISTANCE_TRAVELLD_W_PARACHUTE_OPEN_M;
+}
+```

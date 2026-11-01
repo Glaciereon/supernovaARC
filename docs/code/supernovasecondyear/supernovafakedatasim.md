@@ -1,0 +1,304 @@
+# v02_fake_data_drag_sim
+
+```cpp
+//v2: swapped the real sensor for fake test height data so it can be tested on the bench, and started a drag sim to predict apogee (not finished, doesn't compile).
+
+//talk about making a velocity/height based liftoff trigger
+// make the integer/float casting thing for recording data please
+//implement the calculating/comunicating of the apogee
+//BIG!!!: make timeToFly with the new york method
+
+//libraries
+
+#include <EEPROM.h>
+#include <Wire.h>
+#include <SPI.h>
+#include <Adafruit_Sensor.h>
+//#include "Adafruit_BMP3XX.h"
+#include <Servo.h>
+
+//object creation
+
+//Adafruit_BMP3XX bmp;
+Servo myServo;
+
+//constants
+
+#define SEALEVELPRESSURE_HPA (1013.25)
+#define PASTDATA_ROWS 16 //has to be even, don't touch if you don't know what you're doing.
+#define PASTDATA_COLS 2
+const byte emergencyTime = 6;
+const int servoButton = 12;
+const int servoPin = 4;
+
+//vars
+int storeListIndex = 0;
+int dataListIndex = 0;
+float velocity = 0;
+float pastData[PASTDATA_ROWS][PASTDATA_COLS];	//number of rows depends on run time, needs to be even, test for this. Newest values at the end
+int servoPos = 90;
+float height_0 = 0;
+float apogee = 0; //can be cut if we want
+int lastSample = 0;
+
+int data[] = {
+    0, 1, 2, 2, 3, 4, 5, 6, 7, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21,
+    23, 24, 26, 27, 29, 30, 32, 33, 35, 36, 38, 39, 40, 42, 43, 44, 46, 48,
+    49, 51, 52, 53, 54, 56, 57, 59, 60, 61, 62, 62, 63, 64, 64, 65, 65, 67,
+    68, 70, 72, 74, 75, 76, 77, 76, 77, 78, 79, 80, 81, 81, 83, 84, 85, 86,
+    87, 88, 89, 90, 91, 93, 93, 94, 95, 96, 97, 97, 99, 99, 101, 101, 103,
+    103, 105, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 114, 116,
+    117, 118, 118, 119, 120, 121, 122, 122, 123, 124, 125, 126, 127, 127,
+    129, 130, 130, 130, 132, 133, 133, 135, 136, 136, 137, 138, 138, 139,
+    140, 141, 141, 142, 143, 144, 145, 145, 146, 147, 148, 149, 149, 150,
+    150, 151, 152, 153, 154, 154, 155, 156, 157, 157, 158, 159, 159, 160,
+    161, 162, 162, 162, 164, 164, 165, 166, 167, 167, 167, 168, 169, 169,
+    170, 171, 171, 172, 172, 173, 173, 174, 175, 176, 177, 178, 178, 178,
+    179, 180, 181, 182, 183, 183, 184, 185, 185, 186, 187, 187, 188, 189,
+    191, 193, 194, 194, 194, 193, 194, 195, 196, 200, 203, 207, 209, 212,
+    214, 216, 216, 217, 216, 216, 217, 217, 216, 218, 218, 219, 218, 215,
+    218, 217, 217, 216, 217, 216, 215, 213, 216, 215, 215, 215, 217, 217,
+    218, 221, 220, 217, 214, 211, 210, 209, 209, 210, 211, 214, 216, 217,
+    215, 214, 214, 215, 214, 214, 213, 213, 213, 213, 213, 213, 214, 214,
+    214, 214, 214, 214, 214, 214, 214, 214, 214, 213, 214, 214, 214, 214,
+    214, 214, 214, 214, 214, 214, 214, 214, 214, 213, 213, 213, 214, 214,
+    214, 213, 213, 213, 213, 213, 213, 213, 212, 212, 212, 212, 212, 212,
+    212, 212, 212, 211, 211, 211, 211, 211, 211, 210, 210, 211, 210, 210,
+    209, 209, 209, 209, 209, 209, 209, 209, 209, 209, 208, 207, 207, 207,
+    207, 207, 207, 207, 207, 206, 206, 207, 206, 207, 206, 206, 206, 206,
+    206, 205, 206, 205, 205, 205, 204, 205, 204, 204, 204, 204, 204, 203,
+    203, 204, 203, 203, 203, 204, 204, 203, 203, 202, 202, 202, 202, 202,
+    202, 201, 201, 201, 201, 200, 201, 201, 201, 201, 200, 200, 200, 200,
+    200, 200, 199, 199
+};
+
+void setup() {
+/*
+//attachment and begining
+pinMode(13, OUTPUT);  //this is the onboard LED, the second red light that you see
+pinMode(servoButton, INPUT);
+myServo.attach(servoPin);
+Serial.begin(115200);
+
+//sensor
+while (!Serial);
+ Serial.println("Adafruit BMP388 / BMP390 test");
+ bmp.setTemperatureOversampling(BMP3_OVERSAMPLING_4X);
+ bmp.setPressureOversampling(BMP3_OVERSAMPLING_4X);
+ bmp.setIIRFilterCoeff(BMP3_IIR_FILTER_COEFF_3);
+ bmp.setOutputDataRate(BMP3_ODR_25_HZ);  				//don't touch this, the rest of the program is based off of this.
+
+if (!bmp.begin_I2C()) {
+   Serial.println("Could not find a valid BMP3 sensor, check wiring!");
+   while (1) ;
+ }
+ if (!bmp.performReading()) {
+   Serial.println("Failed to perform reading aw hell naw :(");
+   return;
+ }
+Serial.println("sensor nominal");
+myServo.write(90);  // Set servo to initial position
+Serial.println("servo unlocked");
+height_0 = bmp.readAltitude(SEALEVELPRESSURE_HPA); //set initial height for reference of when to blast off.
+
+digitalWrite(13, HIGH);  // end of setup; two red lights*/
+}
+
+void loop() {
+
+static unsigned long nextSample = millis(); //if a variable is static the next time the code will try to initialize it it will have the same value. kinda like a global variable but for a function
+  if (millis() >= nextSample) {
+    double t = getTime();
+    float h = getHeight();
+    updatePastData(h, t);
+    velocity = getVelocity();
+    Serial.println(String(pastData[PASTDATA_ROWS-1][1] - pastData[0][1]) + " " + String(getTime()) + " " + velocity);
+    nextSample += 30;
+  }
+
+if (buttonPressed()) {  // moves it 90 degrees if button was pressed for .12 seconds
+   if (servoPos == 90) {
+     servoPos = 0;
+   } else {
+     servoPos = 90;
+   }
+   myServo.write(servoPos);
+   delay(200);
+   Serial.println("Servo moved 90 dgrees");
+ }
+
+if (false) { // <-- FIX: Replace with launch condition when ready
+Serial.println("Flying");
+timeToFly();
+}
+
+}
+
+//functions
+
+/*
+checks if the button is down for .12 seconds
+returns true if it is
+*/
+bool buttonPressed() {
+ if (digitalRead(servoButton) != HIGH) {
+   delay(25);
+   if (digitalRead(servoButton) != HIGH) {
+     delay(25);  // this is for accidental presses or accidental contact
+     if (digitalRead(servoButton) != HIGH) {
+       delay(100);
+       if (digitalRead(servoButton) != HIGH) {
+         Serial.println("Button pressed");
+         delay(20);
+         return true;
+       }
+     }
+   }
+ }
+ return false;
+}
+
+/*
+Returns time since program started with two decimal places of precision
+*/
+double getTime() {
+ return ((double)(millis())) / (double)(1000);
+}
+
+/*
+Returns height relative to startup position.
+*/
+float getHeight() {
+  //return bmp.readAltitude(SEALEVELPRESSURE_HPA) - height_0;
+  if (dataListIndex < 400) {
+  return data[dataListIndex];
+  dataListIndex++;
+  } else {
+    return 0;
+  }
+
+}
+
+/*
+Puts next height and time into past data
+*/
+void updatePastData(float h, double t) {
+  for (int i = 0; i < PASTDATA_ROWS - 1; i++) {
+    pastData[i][0] = pastData[i + 1][0];
+    pastData[i][1] = pastData[i + 1][1];
+  }
+  pastData[PASTDATA_ROWS - 1][0] = h;
+  pastData[PASTDATA_ROWS - 1][1] = t;
+}
+
+/*
+Returns velocity based on the sums of the top and bottom of the list
+*/
+float getVelocity() {
+  float botHeightSum = 0;
+  float topHeightSum = 0;
+  float botTimeSum = 0;
+  float topTimeSum = 0;
+  for (int i = 0; i<PASTDATA_ROWS/2; i++) {
+    botHeightSum += pastData[i][0];
+    botTimeSum += pastData[i][1];
+    topHeightSum += pastData[i+PASTDATA_ROWS/2][0];
+    topTimeSum += pastData[i+PASTDATA_ROWS/2][1];
+  }
+
+  float deltaHeight = (topHeightSum - botHeightSum);
+  float deltaTime = (topTimeSum - botTimeSum);
+  return deltaHeight/deltaTime;
+}
+
+//you already know (broken at the moment)
+void timeToFly() {
+  float h;
+  static unsigned long nextSample = millis(); //if a variable is static the next time the code will try to initialize it it will have the same value. kinda like a global variable but for a function
+  float velocity;
+  height_0 = 273;
+  float time_0 = getTime();
+    if (millis() >= nextSample) {
+    double t = getTime();
+    h = getHeight();
+    updatePastData(h, t);
+    velocity = getVelocity();
+    Serial.println(String(pastData[PASTDATA_ROWS-1][1] - pastData[0][1]) + " " + String(getTime()) + " " + velocity);
+    nextSample += 40;//should be 30 for the actuall test
+  } else {delay(3);}
+    //record(pastData[PASTDATA_ROWS-1][0]);
+   // Serial.print("Velocity is: ");
+   float apogee = getDeltaHeight_seperated(velocity, 1.32) + getDeltaHeight_together(velocity, .2, .71)
+    Serial.print((String)velocity + "  " + (String)apogee);
+    bool a = true;
+    bool b = (pastData[PASTDATA_ROWS-1][0] < 200/*precalculated height*/);
+    bool c = pastData[PASTDATA_ROWS-1][1] - time_0 < emergencyTime; //control
+  } while (true /*a && b && c*/);
+
+  myServo.write(90);//the soul purpose of this program
+
+  while (listIndex < 1024) {
+    record(getHeight());
+  }
+
+  //sum with apogee
+}
+
+/*
+records the data
+makes important assumption that the change in height per interval doesnt exceed 100!!
+*/
+/*void record(float height) {
+  Serial.print("height comparative to liftoff is: ");
+  Serial.println(height, 2); // --- FIX: Print float with 2 decimal places
+  if (listIndex < EEPROM.length()) {
+    EEPROM.put(listIndex, height);
+    listIndex++;
+  }                                                  
+}*/
+
+/*
+prints all data
+*/
+void printData() {
+  for (int i = 0; i<PASTDATA_ROWS; i++) {
+     Serial.print("Time: ");
+     Serial.print(pastData[i][1], 4);
+     Serial.print(" Height: ");
+     Serial.println(pastData[i][0], 2);
+  }
+}
+
+float getDeltaHeight_seperated(float velocity, float dragCoeficciant) {
+  float delta_height = 0;
+  float dt = 0.05;
+ 
+  // Simulate the height change while velocity is greater than 1
+  while (velocity > .1) {
+    float force = .5 * dragCoeficciant * referenceArea * airDensity * velocity * velocity;
+    force += 9.8*mass;
+    float acceleration = force / mass;
+    velocity -= acceleration * dt;
+    delta_height += velocity * dt;
+  }
+
+
+  return delta_height;
+}
+
+
+float getDeltaHeight_together(float height, float velocity, float dragCoeficciant, float coastTime) {
+  float time = 0;
+  float dt = 0.05;
+  float delta_height = 0;
+ 
+  // Simulate the height change during coasting phase
+  while (time < coastTime) {
+    float force = .5 * dragCoeficciant * referenceArea * airDensity * velocity * velocity;
+    force += 9.8*mass;
+    float acceleration = force / mass;
+    velocity -= acceleration * dt;
+    delta_height += velocity * dt;
+    time += dt;
+  }
+```
