@@ -1,11 +1,18 @@
 site_name: "Glaciereon's Doc"
 site_url: https://glaciereon.github.io/supernovaARC/
 
+site_name: "Glaciereon's Doc"
+site_url: https://glaciereon.github.io/supernovaARC/
+
 theme:
   name: material
   font:
     text: JetBrains Mono
     code: JetBrains Mono
+  palette:
+    scheme: slate
+    primary: black
+    accent: green
 
 nav:
   - Welcome: index.md
