@@ -6,7 +6,7 @@ Two years of rocket engineering for the American Rocketry Challenge (ARC), where
 
 **Project Coral** is descent control, the second half of ARC scoring. A servo winches a line around the parachute to shrink it mid-flight and adjust descent speed. On its test flight, descent speed went from about 2 m/s to about 5.5 m/s once the winch started.
 
-**Short on time?** Start here:
+**Quicky Summary/Skimming?** Start here:
 
 1. [Supernova Year 2](supernova/supernovayear2.md) for the final design and results
 2. [Coral Update 3](coral/thirdupdate.md) for the reefing test flight
