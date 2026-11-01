@@ -11,8 +11,9 @@ nav:
       - Update 2: coral/secondupdate.md
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
+
   - code:
-  - codebase.md
+
     - supernovasecondyear:
         - supernova1.md
         - supernovafakedatasim.md
@@ -24,5 +25,6 @@ nav:
         - v8kalmanconstant.md
         - v9csvlogging.md
         - v10bailout.md
+    - codebase.md
 plugins:
   - mkdocs-video
