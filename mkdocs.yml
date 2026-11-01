@@ -11,7 +11,20 @@ nav:
       - Update 2: coral/secondupdate.md
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
-  - Supernova Second Year:
+  - Project Supernova:
+      - Year 1: supernova/supernovayear1.md
+      - Year 2: supernova/supernovayear2.md
+  - Supernova Code Y1:
+      - v1: code/supernovafirstyear/e01.md
+      - v2: code/supernovafirstyear/e02.md
+      - v3: code/supernovafirstyear/e03.md
+      - v4: code/supernovafirstyear/e04.md
+      - v5: code/supernovafirstyear/e05.md
+      - v6: code/supernovafirstyear/e06.md
+      - v7: code/supernovafirstyear/e07.md
+      - v8: code/supernovafirstyear/e08.md
+      - v9: code/supernovafirstyear/e09.md
+  - Supernova Code Y2:
       - supernovav1: code/supernovasecondyear/supernovav1.md
       - supernovafakedatasim: code/supernovasecondyear/supernovafakedatasim.md
       - teensysdstates: code/supernovasecondyear/teensysdstates.md
