@@ -14,6 +14,7 @@ nav:
   - Project Supernova:
       - Year 1: supernova/supernovayear1.md
       - Year 2: supernova/supernovayear2.md
+  - Codebase: code/codebase.md
   - Supernova Code Y1:
       - v1: code/supernovafirstyear/e01.md
       - v2: code/supernovafirstyear/e02.md
@@ -35,7 +36,6 @@ nav:
       - v8kalmanconstants: code/supernovasecondyear/v8kalmanconstants.md
       - v9csvlogging: code/supernovasecondyear/v9csvlogging.md
       - v10bailout: code/supernovasecondyear/v10bailout.md
-  - Codebase: code/codebase.md
 
 plugins:
   - search
