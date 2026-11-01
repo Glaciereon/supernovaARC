@@ -1,4 +1,5 @@
 site_name: "Glaciereon's Doc"
+site_url: https://glaciereon.github.io/supernovaARC/
 
 theme:
   name: terminal
@@ -23,7 +24,6 @@ nav:
           - code/supernovasecondyear/v8kalmanconstants.md
           - code/supernovasecondyear/v9csvlogging.md
           - code/supernovasecondyear/v10bailout.md
-
 plugins:
   - search
   - mkdocs-video
