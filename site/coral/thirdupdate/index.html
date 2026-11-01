@@ -1230,21 +1230,21 @@
 <img alt="projectcoraltransitionside" src="../../images/projectcoraltransitionSIDE.png"></p>
 <p>It can be noted that the transition looks quite unique, with a 'channel' running down the side and a small hook section that leans into the body of the rocket. This was done intentionally, so that the line of the shock cord would be less tangled with the parachute itself or associated shroud lines prior to the two halves separating from the ejection charge. It also allowed for us to mount the servo in a vertical fashion (with the axis of rotation being in line with the body tubes), as the dimensions of the servo would have made it difficult to fit in any other orientation. To make the string naturally collect on the spool due to gravity, this resulted in a requirement of horizontal feeding. The spool, naturally, has raised edges as to prevent the shock cord from slipping off during winching. </p>
 <p>Here is the progression of the various winch designs we tried before settling on the final circular design. Due to the size of the servo, the placement of the winch had to be slightly off-center (the drive shaft of the center is not centered, and the servo could not be fit into the BT80 in such a way to make it as such). </p>
-<h1 id="photos-of-winches">PHOTOS OF WINCHES</h1>
+<p><img alt="winchiterations" src="../images/iterationsofwinch.png"></p>
 <p>I also soldered a simple circuit for this. It has very similar components to our earier "Superova" project. It includes the Arduino Nano Every, the Verter 3-5V Buck Boost (required for the LiPo that provides 3.7V to the operating voltage of 5V on the Nano), 2200 microfarad capacitor (for the servo to not cause severe supply voltage drop from current spike), the classic BMP390 barometric pressure sensor for altitude/velocity/acceleration calculations, and the aforementioned 3.7V LiPO (2000mAh). We also used a small piece of a breadboard in order to wire all of these connections together instead of using wired junctions, as there have been incidents in the past where these connections fail or are difficult to add new components to. It is important to note that an SD reader was not used this time, considered unneeded, so all flight data had to be stored on the on-board EEPROM. For the Nano this is a ridiculously small 256 BYTES, meaning all non-essential information must not be tracked. This meant we only tracked the rockets velocity immediately following the start of the winching (during descent), and did not track altitude on the way up, deemed unecessary for this test. </p>
-<h1 id="wiring-diagram">WIRING DIAGRAM</h1>
-<h1 id="picture-of-finished-wiring">PICTURE OF FINISHED WIRING</h1>
 <p>Finally, we had finished all essential parts of this project. A few days before the departure of my close friend, teammate, and lead programmer, on August 15th, we decided to perform a launch. </p>
-<h1 id="selfie-of-both-of-us-in-front-of-car">Selfie of both of us in front of car</h1>
-<h1 id="picture-of-loaded-up-car">Picture of loaded up car</h1>
+<p><img alt="selfiecar" src="../images/selfierocketry.png"></p>
+<p><img alt="carloaded" src="../images/carloading.png"></p>
 <p>We arrived onto the launch field in Acton, set up the launch rail, and loaded the program onto the Nano. </p>
-<h1 id="picture-of-nano-with-cable-sticking-out-and-half-of-the-mechanism-just-out-there">Picture of Nano with cable sticking out and half of the mechanism just out there</h1>
+<p><img alt="electronicstrunk" src="../images/electronistrunk.png"></p>
 <p>This is crucial due to the drift that the barometric pressure sensor experiences. Additionally, it is best for the program to be started on the launch site, as the battery does not last forever and the initial temperature benchmark (done by the BMP) should be based on external temp instead of temp inside the car or other location. In short, the final software upload has become a ritual of our launches. </p>
 <p>And we're off! We set up the rocket on the launch rail, and counted down the seconds to ascertain the summers worth of work following our failure to qualify for ARC. </p>
 <p><em>I apologize for the exclamations, I was quite excited to see this launch.</em></p>
-<h1 id="video-of-launch">VIDEO OF LAUNCH</h1>
-<h1 id="video-of-rocket-coming-down">VIDEO OF ROCKET COMING DOWN</h1>
-<p>Though it is difficult to tell from this video, it was far clearer in the field that the parachute slowly experienced radial contraction as the ratio of height of parachute to radius increased. </p></div>
+<p><div class="video-container"><iframe src="../../videos/reeflaunchfirsthalf.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div><div class="video-container"><iframe src="../../videos/reeflaunchsecondhalf.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<p>Though it is difficult to tell from this video, it was far clearer in the field that the parachute slowly experienced radial contraction as the ratio of height of parachute to radius increased. </p>
+<p>I know this system worked because of the data collected on the aforementioned EEPROM data that was collected.</p>
+<p><img alt="graph" src="../images/importantgraph.png"></p>
+<p>This graph shows that at the time of winching (the process by which the spool rotates) the speed of the rocket was around 2 m/s. To be noted, the rocket was coasting at around this speed for a while before. Then, following the winching, the rocket went up all the way to going between 5 and 6 m/s, for an average of 5.5 m/s. This is an increase of 175% in speed of descent, which is quite exceptional. I believe this to be quite an accomplishment and if implemented with Supernova could result in extremely competitive scores for ARC. </p></div>
 
 
 
