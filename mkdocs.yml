@@ -2,7 +2,7 @@ site_name: "Glaciereon's Doc"
 site_url: https://glaciereon.github.io/supernovaARC/
 
 theme:
-  name: terminal
+  name: material
 
 nav:
   - Welcome: index.md
