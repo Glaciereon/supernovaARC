@@ -11,16 +11,16 @@ nav:
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
   - Code:
-      - Codebase: codebase.md
+      - Codebase: code/codebase.md
       - Supernova Second Year:
-          - code/supernovasecondyear/supernova1.md
+          - code/supernovasecondyear/supernovav1.md
           - code/supernovasecondyear/supernovafakedatasim.md
           - code/supernovasecondyear/teensysdstates.md
           - code/supernovasecondyear/menulogging.md
           - code/supernovasecondyear/v5ishcleanup.md
           - code/supernovasecondyear/kalmanbluetooth.md
           - code/supernovasecondyear/v7kalmanrework.md
-          - code/supernovasecondyear/v8kalmanconstant.md
+          - code/supernovasecondyear/v8kalmanconstants.md
           - code/supernovasecondyear/v9csvlogging.md
           - code/supernovasecondyear/v10bailout.md
 
