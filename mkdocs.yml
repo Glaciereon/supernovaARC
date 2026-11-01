@@ -12,16 +12,16 @@ nav:
       - Next Steps: coral/nextsteps.md
   - Code:
       - Supernova Second Year:
-          - supernova1.md
-          - supernovafakedatasim.md
-          - teensysdstates.md
-          - menulogging.md
-          - v5ishcleanup.md
-          - kalmanbluetooth.md
-          - v7kalmanrework.md
-          - v8kalmanconstant.md
-          - v9csvlogging.md
-          - v10bailout.md
+          - code/supernovasecondyear/supernova1.md
+          - code/supernovasecondyear/supernovafakedatasim.md
+          - code/supernovasecondyear/teensysdstates.md
+          - code/supernovasecondyear/menulogging.md
+          - code/supernovasecondyear/v5ishcleanup.md
+          - code/supernovasecondyear/kalmanbluetooth.md
+          - code/supernovasecondyear/v7kalmanrework.md
+          - code/supernovasecondyear/v8kalmanconstant.md
+          - code/supernovasecondyear/v9csvlogging.md
+          - code/supernovasecondyear/v10bailout.md
       - Codebase: codebase.md
 
 plugins:
