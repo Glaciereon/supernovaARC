@@ -3,6 +3,9 @@ site_url: https://glaciereon.github.io/supernovaARC/
 
 theme:
   name: material
+  font:
+    text: JetBrains Mono
+    code: JetBrains Mono
 
 nav:
   - Welcome: index.md
