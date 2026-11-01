@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#supernova-year-2" class="md-skip">
+        <a href="#supernova-year-2-2025-2026" class="md-skip">
           Skip to content
         </a>
       
@@ -440,6 +440,17 @@
     <span class="md-ellipsis">
       
         Total Flights:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organization
       
     </span>
   </a>
@@ -1398,6 +1409,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organization
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1415,12 +1437,14 @@
 
 
 
-<div><h1 id="supernova-year-2">Supernova Year 2</h1>
+<div><h1 id="supernova-year-2-2025-2026">Supernova Year 2 (2025-2026)</h1>
 <h2 id="again-the-same-note-that-this-documentation-was-made-after-the-year-ended">Again the same note that this documentation was made AFTER the year ended.</h2>
 <p>This year had many progressions as compared to the first year. We learned that in principal, the design does work, but there are numerous issues we ran into that we have to address. First off, the rubber-band design with the push rod is not the best way to achieve separation between the two rockets. The other idea we've had is to use springs around the circumference of the transition instead, allowing for cleaner separation and making sure the parachute does not get stuck since it is stored in the bottom half of the body tube. 
 Early iterations of our rocket had issues with slanted trajectories, electronics working unexpectedly, and the coupler not separating properly. To solve these issues, we made these major adjustments. This is a simple list of the major things we changed and improved upon. </p>
 <h2 id="spring-adjustments">Spring adjustments</h2>
 <p>Our original coupler used three springs in parallel, but this yielded inconsistent separation results. We decided to up the number to six small springs nested inside six larger springs.  This increased the K value of the system, and the smaller springs helped prevent the pegs on the top of the coupler from getting caught on the larger springs.</p>
+<p><div class="video-container"><iframe src="../../videos/properseparation.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<p><em>video of test mechanism in action. The transition is upside down here, but the separation would work similarly when write side up due to Newton's 3rd Law and similar masses between top and bottom halves. I type a command to rotate the servo on my laptop, and the bottom half (pink) jumps away from the top half (green).</em></p>
 <h2 id="rotation-surface-adjustment">Rotation surface adjustment</h2>
 <p>The original surface upon which the bowtie rotated was flat, but we found a slanted surface provided a cleaner and more consistent separation. The slanted surface had the additional benefit of being able to fine-tune the distance of the couplers when locked, as it acted as a pseudo screw mechanism</p>
 <h2 id="servo-switch">Servo switch</h2>
@@ -1431,7 +1455,10 @@ Early iterations of our rocket had issues with slanted trajectories, electronics
 <h2 id="main-code-changesimprovements">Main code changes/improvements</h2>
 <p>When writing the code, we focused on making it easy to iterate on previous programs by using functions to compartmentalize parts of the program. The whole program runs on a 30 ms loop, executing a different program depending on the state of the program (awaiting liftoff, post-separation). The main rate limiter is the frequency at which the sensor gives new data, which we experimentally determined to be about 20 ms. While we considered using the internal INT pin on the sensor to tighten up timing, we decided it was not worth it since we'd have to adjust the sensor software. Initially, we used rough time-window velocity approximations to predict apogee. However, this method was too inaccurate because conditions changed rapidly in flight (wind bursts, motor fuel finishing, and boosting the rocket up), so we moved on. Next, we thought of using linear regression to estimate where the apogee would be early on. Yet, due to the issues mentioned before, this approach tended to overestimate by around 10 meters. Therefore, we decided on using the Kalman filter. Given the accuracy of the velocity in the model we used for it, the Kalman filter became our final choice.</p>
 <h2 id="total-flights">Total Flights:</h2>
-<p>We were able to get in 10 flights this year in addition to our qualification flights. This is a HUGE improvement to the previous years 3 TOTAL, which included two qualification flights and one test flight. </p></div>
+<p>We were able to get in 10 flights this year in addition to our qualification flights. This is a HUGE improvement to the previous years 3 TOTAL, which included two qualification flights and one test flight. </p>
+<h2 id="organization">Organization</h2>
+<p>In the previous year, we had very few launches as aforementioned. In part this was due to our terrible organization and time management, but additionally we did not have our own launch rail nor did we have a comprehensive list of all items needed for launch. This year, we changed this around by having our own custom launch rail and a 'launch box' with all the necessary equipment. </p>
+<p><img alt="organizedstuff" src="../../images/organizedlaunchmaterials.jpeg"></p></div>
 
 
 
