@@ -17,35 +17,35 @@ theme:
 nav:
   - Welcome: index.md
   - Project Supernova:
-    - Year 1: supernova/supernovayear1.md
-    - Year 2: supernova/supernovayear2.md
+      - Year 1: supernova/supernovayear1.md
+      - Year 2: supernova/supernovayear2.md
   - Project Coral:
       - Update 1: coral/firstupdate.md
       - Update 2: coral/secondupdate.md
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
-  - CODEBASE NOTE PLEASE READ: code/codebase.md
-  - Supernova Code Y1:
-      - v1: code/supernovafirstyear/e01.md
-      - v2: code/supernovafirstyear/e02.md
-      - v3: code/supernovafirstyear/e03.md
-      - v4: code/supernovafirstyear/e04.md
-      - v5: code/supernovafirstyear/e05.md
-      - v6: code/supernovafirstyear/e06.md
-      - v7: code/supernovafirstyear/e07.md
-      - v8: code/supernovafirstyear/e08.md
-      - v9: code/supernovafirstyear/e09.md
-  - Supernova Code Y2:
-      - supernovav1: code/supernovasecondyear/supernovav1.md
-      - supernovafakedatasim: code/supernovasecondyear/supernovafakedatasim.md
-      - teensysdstates: code/supernovasecondyear/teensysdstates.md
-      - menulogging: code/supernovasecondyear/menulogging.md
-      - v5ishcleanup: code/supernovasecondyear/v5ishcleanup.md
-      - kalmanbluetooth: code/supernovasecondyear/kalmanbluetooth.md
-      - v7kalmanrework: code/supernovasecondyear/v7kalmanrework.md
-      - v8kalmanconstants: code/supernovasecondyear/v8kalmanconstants.md
-      - v9csvlogging: code/supernovasecondyear/v9csvlogging.md
-      - v10bailout: code/supernovasecondyear/v10bailout.md
+  - Codebase Note: code/codebase.md
+  - Supernova Code, Year 1:
+      - Lists scratch file: code/supernovafirstyear/e01.md
+      - Two functions, recursive: code/supernovafirstyear/e02.md
+      - Height replay sim, AI-assisted: code/supernovafirstyear/e03.md
+      - Apollo new final: code/supernovafirstyear/e04.md
+      - While-loop predictor: code/supernovafirstyear/e05.md
+      - Replay sim, 5-sample velocity: code/supernovafirstyear/e06.md
+      - Apollo v2 final: code/supernovafirstyear/e07.md
+      - EEPROM data reset: code/supernovafirstyear/e08.md
+      - EEPROM data extraction: code/supernovafirstyear/e09.md
+  - Supernova Code, Year 2:
+      - v1 - rolling list restart: code/supernovasecondyear/supernovav1.md
+      - v2 - fake data drag sim: code/supernovasecondyear/supernovafakedatasim.md
+      - v3 - Teensy, SD, states: code/supernovasecondyear/teensysdstates.md
+      - v4 - startup menu, logging: code/supernovasecondyear/menulogging.md
+      - v5 - setup cleanup: code/supernovasecondyear/v5ishcleanup.md
+      - v6 - Kalman + bluetooth implementation: code/supernovasecondyear/kalmanbluetooth.md
+      - v7 - Kalman per cycle: code/supernovasecondyear/v7kalmanrework.md
+      - v8 - tuned constants: code/supernovasecondyear/v8kalmanconstants.md
+      - v9 - CSV data logging: code/supernovasecondyear/v9csvlogging.md
+      - v10 - bailout (code used at launch): code/supernovasecondyear/v10bailout.md
 
 plugins:
   - search
