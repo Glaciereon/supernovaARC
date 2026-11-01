@@ -11,19 +11,19 @@ nav:
       - Update 2: coral/secondupdate.md
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
-  - Code:
-      - Codebase: code/codebase.md
-      - Supernova Second Year:
-          - code/supernovasecondyear/supernovav1.md
-          - code/supernovasecondyear/supernovafakedatasim.md
-          - code/supernovasecondyear/teensysdstates.md
-          - code/supernovasecondyear/menulogging.md
-          - code/supernovasecondyear/v5ishcleanup.md
-          - code/supernovasecondyear/kalmanbluetooth.md
-          - code/supernovasecondyear/v7kalmanrework.md
-          - code/supernovasecondyear/v8kalmanconstants.md
-          - code/supernovasecondyear/v9csvlogging.md
-          - code/supernovasecondyear/v10bailout.md
+  - Supernova Second Year:
+      - supernova1: code/supernovasecondyear/supernova1.md
+      - supernovafakedatasim: code/supernovasecondyear/supernovafakedatasim.md
+      - teensysdstates: code/supernovasecondyear/teensysdstates.md
+      - menulogging: code/supernovasecondyear/menulogging.md
+      - v5ishcleanup: code/supernovasecondyear/v5ishcleanup.md
+      - kalmanbluetooth: code/supernovasecondyear/kalmanbluetooth.md
+      - v7kalmanrework: code/supernovasecondyear/v7kalmanrework.md
+      - v8kalmanconstants: code/supernovasecondyear/v8kalmanconstants.md
+      - v9csvlogging: code/supernovasecondyear/v9csvlogging.md
+      - v10bailout: code/supernovasecondyear/v10bailout.md
+  - Codebase: code/codebase.md
+  
 plugins:
   - search
   - mkdocs-video
