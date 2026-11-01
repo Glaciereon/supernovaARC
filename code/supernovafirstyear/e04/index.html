@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.8.0">
+     
+     
+    
+    <link rel="canonical" href="https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e04/"><link rel="icon" type="image/png" sizes="192x192" href="../../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>v4 - Glaciereon's Doc</title>
+
+
+<link href="../../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../../css/normalize.css" rel="stylesheet">
+<link href="../../../css/terminal.css" rel="stylesheet">
+<link href="../../../css/theme.css" rel="stylesheet">
+<link href="../../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../../css/theme.footer.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="../../../css/palettes/default.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../../../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "../../..",
+    shortcuts = "{}";
+</script>
+<script src="../../../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../../../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../../../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../../../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://glaciereon.github.io/supernovaARC/" class="no-style">Glaciereon's Doc</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../../.." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Welcome</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../../codebase/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Codebase</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                    
+                    
+
+
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="2">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../..">Welcome</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+        
+        
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Project Coral</span>
+        
+    
+    
+        
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/firstupdate/">Update 1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/secondupdate/">Update 2</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/thirdupdate/">Update 3</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/nextsteps/">Next Steps</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+        
+        
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Project Supernova</span>
+        
+    
+    
+        
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../supernova/supernovayear1/">Year 1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../supernova/supernovayear2/">Year 2</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+        
+        
+        
+            
+    
+        
+        <span class="
+        
+    terminal-mkdocs-side-nav-item--active terminal-mkdocs-side-nav-section-no-index">Supernova Code Y1</span>
+    
+    
+        
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../e01/">v1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../e02/">v2</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../e03/">v3</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        <span class="terminal-mkdocs-side-nav-item--active">v4</span>
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../e05/">v5</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../e06/">v6</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../e07/">v7</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../e08/">v8</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../e09/">v9</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+        
+        
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Supernova Code Y2</span>
+        
+    
+    
+        
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/supernovav1/">supernovav1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/supernovafakedatasim/">supernovafakedatasim</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/teensysdstates/">teensysdstates</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/menulogging/">menulogging</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/v5ishcleanup/">v5ishcleanup</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/kalmanbluetooth/">kalmanbluetooth</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/v7kalmanrework/">v7kalmanrework</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/v8kalmanconstants/">v8kalmanconstants</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/v9csvlogging/">v9csvlogging</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../supernovasecondyear/v10bailout/">v10bailout</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../codebase/">Codebase</a>
+        
+    
+    
+    
+       </li>
+        
+    </ul>
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#e04-apollo-new-final">e04: Apollo new final</a></li>
+        
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <div><h1 id="e04-apollo-new-final">e04: Apollo new final</h1>
+<pre><code class="language-cpp">//e04: first full flight sketch: recursive apogee prediction releases the servo, and it dumps the eeprom data after the flight
+
+// 15.1 ms for the two calculations
+
+
+//libraries
+#include &lt;EEPROM.h&gt;
+#include &lt;Wire.h&gt;
+#include &lt;SPI.h&gt;
+#include &lt;Adafruit_Sensor.h&gt;
+#include "Adafruit_BMP3XX.h"
+#include &lt;Servo.h&gt;
+
+
+//object creation
+Adafruit_BMP3XX bmp;
+Servo myServo;
+
+
+//constants
+#define SEALEVELPRESSURE_HPA (1013.25)
+const int servoButton = 12;                                      // button that rotates the servo 90 degrees
+const int servoPin = 4;                                          // Pin for servo motor
+const float emergencyTime = 4.9;                                 // Seconds before automatic split
+const int hSeparation = 752;                                     // Separation height in feet
+const float timeFromStartOfSeperationToUnfoldedParachute = .71;  //time From Start Of Seperation ToUnfolded Parachute in seconds
+const int dataTime = 8;
+const float airDensity = 1.297;    // density in kg/m^3
+const float referenceArea = .038;  // m/2
+const float mass = .619;           // mass of rocket in kg 😊
+byte servoPos = 90;
+int listIndex = 0;
+float height = 0;
+float height_0 = 0;
+float time_0 = 0;
+float apogee = 0;
+float tApogee = 0;
+float average = 0;
+float velocity = 0;  // velocity in m/s
+float height_list[10] = {0,0,0,0,0,0,0,0,0,0};
+
+
+void setup() {
+ //pin/serial attachment
+ pinMode(13, OUTPUT);  //this is the onboard LED
+ digitalWrite(13, LOW);
+ pinMode(servoButton, INPUT);
+ myServo.attach(servoPin);
+ Serial.begin(115200);
+
+
+ // Sensor configuration
+ while (!Serial)
+   ;
+ Serial.println("Adafruit BMP388 / BMP390 test");
+ bmp.setTemperatureOversampling(BMP3_OVERSAMPLING_8X);
+ bmp.setPressureOversampling(BMP3_OVERSAMPLING_8X);
+ bmp.setIIRFilterCoeff(BMP3_IIR_FILTER_COEFF_3);
+ bmp.setOutputDataRate(BMP3_ODR_50_HZ);
+ Serial.println("test 1");
+ if (!bmp.begin_I2C()) {
+   Serial.println("Could not find a valid BMP3 sensor, check wiring!");
+   while (1)
+     ;
+ }
+ if (!bmp.performReading()) {
+   Serial.println("Failed to perform reading aw hell naw :(");
+   return;
+ }
+ myServo.write(90);  // Set servo to initial position
+
+
+ //calibrate altemeter
+ for (int i = 0; i &lt; 1000; i++) {
+   height_0 = bmp.readAltitude(SEALEVELPRESSURE_HPA);
+ }
+ digitalWrite(13, HIGH);  // end of setup
+}
+
+
+void loop() {
+ height = bmp.readAltitude(SEALEVELPRESSURE_HPA) - height_0;
+
+
+ // this is to counteract the mysterious hight gain
+ /*  if (((int)pTime())%60 == 0) {
+    for (int i = 0; i&lt;5; i++) {
+      height_0 = bmp.readAltitude(SEALEVELPRESSURE_HPA);
+    }
+  }*/
+
+
+ if (buttonPressed()) {  // moves it 90 degrees if button was pressed for .12 seconds
+   if (servoPos == 90) {
+     servoPos = 0;
+   } else {
+     servoPos = 90;
+   }
+   myServo.write(servoPos);
+   delay(1500);
+   Serial.println("Servo moved 90 dgrees");
+ }
+
+
+ //prints all the data
+ Serial.print("Height is ");
+ Serial.print(getHeight(10) /*(bmp.readAltitude(SEALEVELPRESSURE_HPA) - height_0)*/ * 3.28084);
+ Serial.println(" feet off the starting point");
+ if (height &gt; 10) {  // blast off!!!!!!!@#$%^&amp;*&amp;^%$#🚀 🎇
+   timeToFly();
+ }
+}
+
+
+//functions
+
+
+/*
+checks if the button is down for .12 seconds
+returns true if it is
+*/
+bool buttonPressed() {
+ if (digitalRead(servoButton) != HIGH) {
+   delay(25);
+   if (digitalRead(servoButton) != HIGH) {
+     delay(25);  // this is for accidental presses or accidental contact
+     if (digitalRead(servoButton) != HIGH) {
+       delay(100);
+       if (digitalRead(servoButton) != HIGH) {
+         Serial.println("Button pressed");
+         delay(20);
+         return true;
+       }
+     }
+   }
+ }
+ return false;
+}
+
+
+/*
+whis is what happens from the point that the rocket goes above 10 meters
+*/
+void timeToFly() {
+ time_0 = pTime();                                        //time at launch
+ height_0 = bmp.readAltitude(SEALEVELPRESSURE_HPA) + 10;  //height at the start of data collection
+ do {
+   height = getHeight(1);
+   velocity = getVelocity(height);
+   if (height &gt; apogee) {
+     apogee = height;
+   }
+   if (listIndex &lt; 1024) {
+     record(height, (pTime() - time_0));
+   }
+   tApogee = height;
+   tApogee += getDeltaHeight_together(height, velocity, .073, 0);
+   tApogee += getDeltaHeight_seperated(height, velocity, 1.32);
+
+
+ } while ((tApogee &gt;= (240 - getDeltaHeight_together(height, velocity, 0.073, 0.71- 0.045))) &amp;&amp; ((pTime() - time_0) &lt; emergencyTime) &amp;&amp; (height &lt; 200));
+ Serial.print("done.");
+ myServo.write(90);
+ while (((pTime() - time_0) &lt; dataTime) &amp;&amp;(listIndex &lt; 1024)) {
+     record(getHeight(2), (pTime() - time_0));
+   }
+
+
+ Serial.println("EEPROM DATA BEGIN");
+ for (int i = 0; i &lt; EEPROM.length(); i++) {
+   Serial.println(EEPROM.read(i));
+ }
+ Serial.println("EEPROM DATA DONE");
+
+
+ Serial.println("done with flight, moving on to apogee loop");
+
+
+ while (true) {
+   Serial.println("this is the apogee in meters: " + (String)apogee);
+   delay(1000);
+ }
+}
+
+
+/*
+returns time since the program has started in seconds
+*/
+double pTime() {
+ return ((double)(millis())) / (double)(1000);
+}
+
+
+
+
+float getVelocity(float newData){
+ float hold = 0;
+ float sum = 0;
+ for (int i = 9; i &gt; 0; i--){
+   height_list[i] = height_list[i-1];
+   sum += height_list[i];
+ }
+ height_list[0] = newData;
+ return (sum += newData)/0.5;
+}
+
+
+
+
+/*
+records the data
+makes important assumption that the change in height per interval doesnt exceed 100!!
+*/
+void record(float height, double time) {
+ String cplusplussucks = "Time from liftoff in seconds is: " + (String)(pTime() - time_0) + " height comparative to liftoff is: " + (String)height + "\n";
+ Serial.print(cplusplussucks);
+ if (listIndex == 0) {
+   EEPROM.write(0, (int)time);
+   EEPROM.write(512, (int)height);
+ } else {
+   EEPROM.write(listIndex, (double)(10 * time));  //records the dime in deciseconds
+   EEPROM.write(listIndex + 512, (int)height);    //records the dime in deciseconds
+ }
+ listIndex++;
+}
+
+
+/*
+returns the average of the past sampleLength readings
+*/
+float getHeight(int sampleLength) {
+ float average = 0;
+ for (int i = 0; i &lt; sampleLength; i++) {
+   average += bmp.readAltitude(SEALEVELPRESSURE_HPA) - height_0;
+ }
+ return average / sampleLength;
+}
+
+
+
+
+float getDeltaHeight_seperated(float height, float velocity, float dragCoeficciant) {
+ if (velocity &lt; .5) {
+   return 0.0;
+ }
+
+
+ float force = .5 * dragCoeficciant * 0.038 /*referenceArea*/ * airDensity * velocity * velocity;
+ float acceleration = force / 0.619 /*mass*/;
+ velocity -= acceleration * .25;
+ float delta_height = 0;
+ delta_height = delta_height + velocity * .25 + getDeltaHeight_seperated(height, velocity, 1.32);
+ return delta_height;
+}
+
+
+float getDeltaHeight_together(float height, float velocity, float dragCoeficciant, float time) {
+ if (time &gt;= .71) {
+   return 0.0;
+ }
+
+
+ float force = .5 * dragCoeficciant * 0.038 /*referenceArea*/ * airDensity * velocity * velocity;
+ float acceleration = force / 0.619 /*mass*/;
+ velocity -= acceleration * .05;
+ time += .05;
+ float delta_height = 0;
+ delta_height = delta_height + velocity * .05 + getDeltaHeight_together(height, velocity, .073, time);
+ return delta_height;
+}
+
+
+
+
+//dragcoeficiant when seperated = 1.32
+</code></pre></div>
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>
