@@ -15,14 +15,15 @@ Our original coupler used three springs in parallel, but this yielded inconsiste
 *video of test mechanism in action. The transition is upside down here, but the separation would work similarly when write side up due to Newton's 3rd Law and similar masses between top and bottom halves. I type a command to rotate the servo on my laptop, and the bottom half (pink) jumps away from the top half (green).*
 
 ## Rotation surface adjustment
-The original surface upon which the bowtie rotated was flat, but we found a slanted surface provided a cleaner and more consistent separation. The slanted surface had the additional benefit of being able to fine-tune the distance of the couplers when locked, as it acted as a pseudo screw mechanism
+The original surface upon which the bowtie rotated was flat, but we found a slanted surface provided a cleaner and more consistent separation. The slanted surface had the additional benefit of being able to fine-tune the distance of the couplers when locked, as it acted as a pseudo screw mechanism.
+
 ## Servo switch
 The original plastic servos we used had trouble rotating and overcoming the torque applied by the springs (typical 9g hobby servos). We switched to a 9 kg/cm servo to solve this issue, slightly increasing weight but significantly increasing torque. 
 
 ## Electronics container & snap-fit
-We CADed an electronics container with a snap-fit design to protect our sensors during flight and provide consistent readings, as we had had issues the previous year with electronics jostling around inside of the body tube and 
+We CADed an electronics container with a snap-fit design to protect our sensors during flight and provide consistent readings, as we had had issues the previous year with electronics jostling around inside of the body tube and connections being broken.
 
-We found the parts we used online, sorting by specs and compatibility. When parts didn't work, like the teensy 4.1 malfunctioning in the cold or the electronics breaking on impact we researched the issue and bought a replacement. Using a wiring diagram was an easy way to keep track of connections. Some hardships were that with a circuit with so many connections we moved on to using a breadboard to organize power connections, since they kept disconnecting when we wrapped the wires together. Some improvements we might make in the future is making a custom PCB of the electronics and just soldering the servo on.
+We found the components/parts we used online, sorting by specs and compatibility. When parts didn't work, like the teensy 4.1 malfunctioning in the cold or the electronics breaking on impact we researched the issue and bought a replacement. Using a wiring diagram was an easy way to keep track of connections. Some hardships were that with a circuit with so many connections we moved on to using a breadboard to organize power connections, since they kept disconnecting when we wrapped the wires together. Some improvements we might make in the future is making a custom PCB of the electronics and just soldering the servo on.
 
 
 ## Main code changes/improvements
