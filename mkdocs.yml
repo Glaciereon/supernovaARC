@@ -4,14 +4,14 @@ theme:
   name: terminal
 
 nav:
-  - index.md
+  - Welcome: index.md
   - Project Coral:
       - Update 1: coral/firstupdate.md
       - Update 2: coral/secondupdate.md
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
   - Code:
-  - codebase.md
+      - Codebase: codebase.md
       - Supernova Second Year:
           - code/supernovasecondyear/supernova1.md
           - code/supernovasecondyear/supernovafakedatasim.md
