@@ -1,4 +1,4 @@
-# Supernova Year 1
+# Supernova Year 1 (2024-2025)
 
 
 ## A NOTE: This documentation was created following a year and a half of work, and thus some details are prone to being forgotten besides the information that is saved somewhere. This was not done while the project was ongoing.
@@ -30,3 +30,4 @@ Additionally, to prevent the two halves of the transition from rotating against 
 ![originaltransition](../images/originaltransition.jpeg)
 
 Ultimately, this design worked alright, but a combination of worse code and poor physical mechanisms meant this design had little to no chances of qualifying. 
+

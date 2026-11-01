@@ -50,7 +50,12 @@ And we're off! We set up the rocket on the launch rail, and counted down the sec
 Though it is difficult to tell from this video, it was far clearer in the field that the parachute slowly experienced radial contraction as the ratio of height of parachute to radius increased. 
 
 
-I know this system worked because of the data collected on the aforementioned EEPROM data that was collected.
+Here is an image of the winch system with a lot of Kevlar thread wrapped around the spool. This also clearly shows that the parachute was retracted and did not tangle - meaning the channel made in the transition served its purpose.
+
+![successfulwinch](../images/successfulwinch.jpeg)
+
+
+I know additionally that this system worked because of the data collected on the aforementioned EEPROM data that was collected.
 
 ![graph](../images/graphimportant.jpeg)
 

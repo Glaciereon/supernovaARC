@@ -1,4 +1,4 @@
-# Supernova Year 2
+# Supernova Year 2 (2025-2026)
 
 
 ## Again the same note that this documentation was made AFTER the year ended.
@@ -9,6 +9,10 @@ Early iterations of our rocket had issues with slanted trajectories, electronics
 ## Spring adjustments
 
 Our original coupler used three springs in parallel, but this yielded inconsistent separation results. We decided to up the number to six small springs nested inside six larger springs.  This increased the K value of the system, and the smaller springs helped prevent the pegs on the top of the coupler from getting caught on the larger springs.
+
+![type:video](../videos/properseparation.mp4)
+
+*video of test mechanism in action. The transition is upside down here, but the separation would work similarly when write side up due to Newton's 3rd Law and similar masses between top and bottom halves. I type a command to rotate the servo on my laptop, and the bottom half (pink) jumps away from the top half (green).*
 
 ## Rotation surface adjustment
 The original surface upon which the bowtie rotated was flat, but we found a slanted surface provided a cleaner and more consistent separation. The slanted surface had the additional benefit of being able to fine-tune the distance of the couplers when locked, as it acted as a pseudo screw mechanism
@@ -26,6 +30,12 @@ When writing the code, we focused on making it easy to iterate on previous progr
 
 ## Total Flights:
 We were able to get in 10 flights this year in addition to our qualification flights. This is a HUGE improvement to the previous years 3 TOTAL, which included two qualification flights and one test flight. 
+
+## Organization
+
+In the previous year, we had very few launches as aforementioned. In part this was due to our terrible organization and time management, but additionally we did not have our own launch rail nor did we have a comprehensive list of all items needed for launch. This year, we changed this around by having our own custom launch rail and a 'launch box' with all the necessary equipment. 
+
+![organizedstuff](../images/organizedlaunchmaterials.jpeg)
 
 
 

@@ -20,7 +20,11 @@ The first parachute attached was a bog standard 18” ripstock nylon parachute m
 
 ![standardParachute](../images/bogStandardParachute.jpeg)
 
-Using the basic formula for terminal velocity (vt = √(2mg / (pACd)), plugging in standard values for p (air density, 1.225 kg/m³) and Cd (standard drag coefficient, 1.5) for a hemispherical parachute, a mass of approximately 240g, and approximating projected surface area to be around 0.7x of total surface area, we get a vt of (√((2 * 0.240kg * 9.81m/s2)/(1.225 kg/m³ * 0.115 m2 * 1.5)) = 4.72 m/s. This was accurately depicted in our drop tests of the payload with such a parachute, in which we realized that we would have very little window to determine any modulations in descent time with the reefing. We thus decided on making our own makeshift parachutes - ordering every time we need a different size from Apogee takes at least several weeks, and we would be able to customize the diameter perfectly. Our first parachute was made out of Amazon ‘kite’ nylon with a 40cm radius, quadrupling surface area from our previous 46cm DIAMETER parachute and thus reducing terminal velocity by a factor of 2. 
+Using the basic formula for terminal velocity (vt = √(2mg / (pACd))), plugging in standard values for p (air density, 1.225 kg/m³) and Cd (standard drag coefficient, 1.5) for a hemispherical parachute, a mass of approximately 240g, and approximating projected surface area to be around 0.7x of total surface area, we get a vt of √((2 * 0.240kg * 9.81m/s2)/(1.225 kg/m³ * 0.115 m2 * 1.5)) = 4.72 m/s. This was accurately depicted in our drop tests of the payload with such a parachute, in which we realized that we would have very little window to determine any modulations in descent time with the reefing. We thus decided on making our own makeshift parachutes - ordering every time we need a different size from Apogee takes at least several weeks, and we would be able to customize the diameter perfectly. Our first parachute was made out of Amazon ‘kite’ nylon with a 40cm radius, quadrupling surface area from our previous 46cm DIAMETER parachute and thus decreasing terminal velocity by a **factor of 2**. Why? So that we would have more leeway and then be able to winch even harder - increasing the 'slow' extreme. 
+
+
+![type:video](../videos/veryveryfirstdroptest.mp4)
+*drop test with the standard parachute resulted in very very quick descent. My father was there to assist by catching the container in case it fell too quickly, as it did.*
 
 
 ![customParachute](../images/nylonDIYParachute.jpeg)
