@@ -36,7 +36,7 @@ Finally, we had finished all essential parts of this project. A few days before 
 
 We arrived onto the launch field in Acton, set up the launch rail, and loaded the program onto the Nano. 
 
-![electronicstrunk](../images/electronistrunk.jpeg)
+![electronicstrunk](../images/electronicstrunk.jpeg)
 
 This is crucial due to the drift that the barometric pressure sensor experiences. Additionally, it is best for the program to be started on the launch site, as the battery does not last forever and the initial temperature benchmark (done by the BMP) should be based on external temp instead of temp inside the car or other location. In short, the final software upload has become a ritual of our launches. 
 
