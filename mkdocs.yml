@@ -13,8 +13,6 @@ nav:
       - Next Steps: coral/nextsteps.md
   - code:
   - codebase.md
-    - supernovafirstyear:
-        
     - supernovasecondyear:
         - supernova1.md
         - supernovafakedatasim.md
@@ -26,12 +24,5 @@ nav:
         - v8kalmanconstant.md
         - v9csvlogging.md
         - v10bailout.md
-    
-    - reefcode:
-      - supernovav1.md
-      - supernovav2.md
-      - supernovav3.md
-      - coraltestcode.md
-      - corallaunchcode.md
 plugins:
   - mkdocs-video
