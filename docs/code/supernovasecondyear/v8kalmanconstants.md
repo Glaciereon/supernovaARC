@@ -1,7 +1,7 @@
 # v08_tuned_constants
 
 ```cpp
-//v8: tuned constants (shorter max separation time, flush count 100, finer sim step) and logs in a smaller space separated format.
+//v8: tuned constants (shorter max separation time, flush count 100, finer sim step) and logs in a smaller space separated format
 
 //STILL need to do the tests with the sensor. Flags left in setup sensor
 // I can also forcebly add gravity to the kalman but that assumes i'm adding acceleration so  . . . .

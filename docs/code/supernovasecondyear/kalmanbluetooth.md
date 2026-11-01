@@ -1,7 +1,7 @@
 # v06_kalman_bluetooth
 
 ```cpp
-//v6: big jump: kalman filter for height and velocity, bluetooth, an on ground menu with a prime rocket step, and a model that predicts when to release the servo.
+//v6: big jump: kalman filter for height and velocity, bluetooth (ends up not being used in final version for being finicky), an on ground menu with a prime rocket step, and model that predicts when to release the servo
 
 //STILL need to do the tests with the sensor. Flags left in setup sensor
 // in the future have a flag that indicates wheather the card is open or closed

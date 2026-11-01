@@ -1,7 +1,7 @@
 # v05_setup_cleanup
 
 ```cpp
-//v5: small cleanup of v4: pin and servo setup moved to the start of setup, file name bumped, and one leftover edit comment removed.
+//v5: small cleanup of v4: pin and servo setup moved to the start of setup, not big change
 
 //get onboard LED functioning for after liftoff
 

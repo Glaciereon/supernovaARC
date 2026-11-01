@@ -1,7 +1,7 @@
 # v04_startup_menu_batch_logging
 
 ```cpp
-//v4: added the startup menu (defaults or servo calibration), a DataPoint struct, and batch writes to the sd card with a config line at the top of the file.
+//v4: added the startup menu (defaults or servo calibration), DataPoint struct, and batch writes to the sd card with a config line at the top of the file
 
 //button pressed is only triggerable by serial communication, add filter coefficient to config prints
 //servo changes still need to be integrated

@@ -1,7 +1,7 @@
 # v07_kalman_per_cycle_release_sim
 
 ```cpp
-//v7: kalman now updates every cycle off a saved previous point, and the release prediction steps through servo opening, spring boost, and a parachute drag sim.
+//v7: kalman now updates every cycle off a saved previous point, and the release prediction steps through servo opening, spring boost, and parachute drag sim
 
 //STILL need to do the tests with the sensor. Flags left in setup sensor
 // I can also forcebly add gravity to the kalman but that assumes i'm adding acceleration so  . . . .

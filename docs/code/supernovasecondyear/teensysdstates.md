@@ -1,7 +1,7 @@
 # v03_teensy_sd_states
 
 ```cpp
-//v3: moved to the teensy with sd card logging, a state machine (preLaunch/preSeparation/postSeparation), a serial menu, and a smoothing filter on height.
+//v3: moved to the teensy with sd card logging, a state machine (preLaunch/preSeparation/postSeparation), a serial menu, and a smoothing filter on height
 
 /*
 general info

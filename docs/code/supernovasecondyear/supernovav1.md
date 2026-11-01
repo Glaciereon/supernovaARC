@@ -1,7 +1,7 @@
 # v01_first_version
 
 ```cpp
-//v1: first version. reads the bmp, gets velocity from a rolling list of heights, button moves the servo, and timeToFly is still broken.
+//v1: first version. reads the bmp, gets velocity from a rolling list of heights, button moves the servo, and timeToFly is still broken
 
 //last years apollo stuff
 

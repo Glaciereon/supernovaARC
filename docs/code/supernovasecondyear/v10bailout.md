@@ -1,7 +1,7 @@
 # v10_bailout
 
 ```cpp
-//v10: this is bailout, the one that flew. bluetooth off, unfurl distance 10, new servo positions, and it starts on the ground menu with extra serial debug prints.
+//v10: this is 'bailout' version we actually launched with. no bluetooth, unfurl distance 10, new servo positions, and starts on the ground menu with serial debug prints so clearly not perfect
 
 //STILL need to do the tests with the sensor. Flags left in setup sensor
 // I can also forcebly add gravity to the kalman but that assumes i'm adding acceleration so  . . . .

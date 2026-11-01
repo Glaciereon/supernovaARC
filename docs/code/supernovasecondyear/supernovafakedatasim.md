@@ -1,7 +1,7 @@
 # v02_fake_data_drag_sim
 
 ```cpp
-//v2: swapped the real sensor for fake test height data so it can be tested on the bench, and started a drag sim to predict apogee (not finished, doesn't compile).
+//v2: swapped the real sensor for fake test height data so it can be tested on the bench, and started a drag sim to predict apogee (not finished, doesn't compile lol)
 
 //talk about making a velocity/height based liftoff trigger
 // make the integer/float casting thing for recording data please

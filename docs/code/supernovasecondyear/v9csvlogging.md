@@ -1,7 +1,7 @@
 # v09_csv_logging_fixed_unfurl
 
 ```cpp
-//v9: csv logging that writes every point and flushes every 10, handles failed sensor reads, and swaps the drag sim for a fixed parachute unfurl distance. also retuned the spring gain, unfurl time, and sensor variance.
+//v9: csv logging that writes every point and flushes every 10, handles failed sensor reads, and swaps the drag sim for a fixed parachute unfurl distance, also retuned the spring gain, unfurl time, and sensor variance
 
 //STILL need to do the tests with the sensor. Flags left in setup sensor
 // I can also forcebly add gravity to the kalman but that assumes i'm adding acceleration so  . . . .
