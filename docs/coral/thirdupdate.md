@@ -24,19 +24,19 @@ It can be noted that the transition looks quite unique, with a 'channel' running
 
 Here is the progression of the various winch designs we tried before settling on the final circular design. Due to the size of the servo, the placement of the winch had to be slightly off-center (the drive shaft of the center is not centered, and the servo could not be fit into the BT80 in such a way to make it as such). 
 
-![winchiterations](../images/iterationsofwinch.png)
+![winchiterations](../images/iterationsofwinch.jpeg)
 
 I also soldered a simple circuit for this. It has very similar components to our earier "Superova" project. It includes the Arduino Nano Every, the Verter 3-5V Buck Boost (required for the LiPo that provides 3.7V to the operating voltage of 5V on the Nano), 2200 microfarad capacitor (for the servo to not cause severe supply voltage drop from current spike), the classic BMP390 barometric pressure sensor for altitude/velocity/acceleration calculations, and the aforementioned 3.7V LiPO (2000mAh). We also used a small piece of a breadboard in order to wire all of these connections together instead of using wired junctions, as there have been incidents in the past where these connections fail or are difficult to add new components to. It is important to note that an SD reader was not used this time, considered unneeded, so all flight data had to be stored on the on-board EEPROM. For the Nano this is a ridiculously small 256 BYTES, meaning all non-essential information must not be tracked. This meant we only tracked the rockets velocity immediately following the start of the winching (during descent), and did not track altitude on the way up, deemed unecessary for this test. 
 
 Finally, we had finished all essential parts of this project. A few days before the departure of my close friend, teammate, and lead programmer, on August 15th, we decided to perform a launch. 
 
-![selfiecar](../images/selfierocketry.png)
+![selfiecar](../images/selfierocketry.jpeg)
 
-![carloaded](../images/carloading.png)
+![carloaded](../images/carloading.jpeg)
 
 We arrived onto the launch field in Acton, set up the launch rail, and loaded the program onto the Nano. 
 
-![electronicstrunk](../images/electronistrunk.png)
+![electronicstrunk](../images/electronistrunk.jpeg)
 
 This is crucial due to the drift that the barometric pressure sensor experiences. Additionally, it is best for the program to be started on the launch site, as the battery does not last forever and the initial temperature benchmark (done by the BMP) should be based on external temp instead of temp inside the car or other location. In short, the final software upload has become a ritual of our launches. 
 
