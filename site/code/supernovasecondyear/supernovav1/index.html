@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.8.0">
+     
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>v01_first_version - Glaciereon's Doc</title>
+
+
+<link href="../../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../../css/normalize.css" rel="stylesheet">
+<link href="../../../css/terminal.css" rel="stylesheet">
+<link href="../../../css/theme.css" rel="stylesheet">
+<link href="../../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../../css/theme.footer.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="../../../css/palettes/default.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="/" class="no-style">Glaciereon's Doc</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../../../homepage/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Welcome</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                
+                
+                
+                    
+                    
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../homepage/">Welcome</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+        
+        
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Project Coral</span>
+        
+    
+    
+        
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/firstupdate/">Update 1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/secondupdate/">Update 2</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/thirdupdate/">Update 3</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/nextsteps/">Next Steps</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+        
+        
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">code</span>
+        
+    
+    
+        
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            
+            
+            <span class="
+        
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">supernovasecondyear</span>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../codebase.md">None</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+       </li>
+        
+    </ul>
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#v01_first_version">v01_first_version</a></li>
+        
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <div><h1 id="v01_first_version">v01_first_version</h1>
+<pre><code class="language-cpp">//v1: first version. reads the bmp, gets velocity from a rolling list of heights, button moves the servo, and timeToFly is still broken.
+
+//last years apollo stuff
+
+//talk about making a velocity/height based liftoff trigger
+// make the integer/float casting thing for recording data please
+//implement the calculating/comunicating of the apogee
+//BIG!!!: make timeToFly with the new york method
+
+//libraries
+
+#include &lt;EEPROM.h&gt;
+#include &lt;Wire.h&gt;
+#include &lt;SPI.h&gt;
+#include &lt;Adafruit_Sensor.h&gt;
+#include "Adafruit_BMP3XX.h"
+#include &lt;Servo.h&gt;
+
+//object creation
+
+Servo myServo;
+
+//constants
+
+#define SEALEVELPRESSURE_HPA (1013.25)
+#define PASTDATA_COLS 2
+const byte emergencyTime = 6;
+const int servoButton = 12;
+const int servoPin = 4;
+
+//vars
+int listIndex = 0;
+float velocity = 0;
+float pastData[PASTDATA_ROWS][PASTDATA_COLS];   //number of rows depends on run time, needs to be even, test for this. Newest values at the end
+int servoPos = 90;
+float height_0 = 0;
+float apogee = 0; //can be cut if we want
+int lastSample = 0;
+void setup() {
+
+//attachment and begining
+pinMode(13, OUTPUT);  //this is the onboard LED, the second red light that you see
+pinMode(servoButton, INPUT);
+myServo.attach(servoPin);
+Serial.begin(115200);
+
+//sensor
+while (!Serial);
+ Serial.println("Adafruit BMP388 / BMP390 test");
+ bmp.setTemperatureOversampling(BMP3_OVERSAMPLING_4X);
+ bmp.setPressureOversampling(BMP3_OVERSAMPLING_4X);
+ bmp.setIIRFilterCoeff(BMP3_IIR_FILTER_COEFF_3);
+ bmp.setOutputDataRate(BMP3_ODR_25_HZ);                 //the rest of the program is based off of this; don't edit
+
+if (!bmp.begin_I2C()) {
+   Serial.println("Could not find a valid BMP3 sensor, check wiring!");
+   while (1) ;
+ }
+ if (!bmp.performReading()) {
+   Serial.println("Failed to perform reading aw hell naw :(");
+   return;
+ }
+Serial.println("sensor nominal");
+myServo.write(90);  // Set servo to initial position
+Serial.println("servo unlocked");
+height_0 = bmp.readAltitude(SEALEVELPRESSURE_HPA); //set initial height for reference of when to blast off.
+
+digitalWrite(13, HIGH);  // end of setup; two red lights
+}
+
+void loop() {
+
+static unsigned long nextSample = millis(); //if a variable is static the next time the code will try to initialize it it will have the same value. kinda like a global variable but for a function
+  if (millis() &gt;= nextSample) {
+    double t = getTime();
+    float h = getHeight();
+    updatePastData(h, t);
+    velocity = getVelocity();
+    Serial.println(String(pastData[PASTDATA_ROWS-1][1] - pastData[0][1]) + " " + String(getTime()) + " " + velocity);
+    nextSample += 30;
+  }
+
+if (buttonPressed()) {  // moves it 90 degrees if button was pressed for .12 seconds
+   if (servoPos == 90) {
+     servoPos = 0;
+   } else {
+     servoPos = 90;
+   }
+   myServo.write(servoPos);
+   delay(200);
+   Serial.println("Servo moved 90 dgrees");
+ }
+
+if (false) { // &lt;-- FIX: Replace with launch condition when ready
+Serial.println("Flying");
+timeToFly();
+}
+
+}
+
+//functions
+
+/*
+checks if the button is down for .12 seconds
+returns true if it is
+*/
+bool buttonPressed() {
+ if (digitalRead(servoButton) != HIGH) {
+   delay(25);
+   if (digitalRead(servoButton) != HIGH) {
+     delay(25);  // this is for accidental presses or accidental contact
+     if (digitalRead(servoButton) != HIGH) {
+       delay(100);
+       if (digitalRead(servoButton) != HIGH) {
+         Serial.println("Button pressed");
+         delay(20);
+         return true;
+       }
+     }
+   }
+ }
+ return false;
+}
+
+/*
+Returns time since program started with two decimal places of precision
+*/
+double getTime() {
+ return ((double)(millis())) / (double)(1000);
+}
+
+/*
+Returns height relative to startup position.
+*/
+float getHeight() {
+  return bmp.readAltitude(SEALEVELPRESSURE_HPA) - height_0;
+}
+
+/*
+Puts next height and time into past data
+*/
+void updatePastData(float h, double t) {
+  for (int i = 0; i &lt; PASTDATA_ROWS - 1; i++) {
+    pastData[i][0] = pastData[i + 1][0];
+    pastData[i][1] = pastData[i + 1][1];
+  }
+  pastData[PASTDATA_ROWS - 1][0] = h;
+  pastData[PASTDATA_ROWS - 1][1] = t;
+}
+
+/*
+Returns velocity based on the sums of the top and bottom of the list
+*/
+float getVelocity() {
+  float botHeightSum = 0;
+  float topHeightSum = 0;
+  float botTimeSum = 0;
+  float topTimeSum = 0;
+  for (int i = 0; i&lt;PASTDATA_ROWS/2; i++) {
+    botHeightSum += pastData[i][0];
+    botTimeSum += pastData[i][1];
+    topHeightSum += pastData[i+PASTDATA_ROWS/2][0];
+    topTimeSum += pastData[i+PASTDATA_ROWS/2][1];
+  }
+
+  float deltaHeight = (topHeightSum - botHeightSum);
+  float deltaTime = (topTimeSum - botTimeSum);
+  return deltaHeight/deltaTime;
+}
+
+//you already know (broken at the moment)
+void timeToFly() {
+  float velocity;
+  height_0 = bmp.readAltitude(SEALEVELPRESSURE_HPA);
+  float time_0 = getTime();
+  do {
+    if (millis() &gt;= nextSample) {
+    double t = getTime();
+    float h = getHeight();time
+    updatePastData(h, t);
+    velocity = getVelocity();
+    Serial.println(String(pastData[PASTDATA_ROWS-1][1] - pastData[0][1]) + " " + String(getTime()) + " " + velocity);
+    nextSample += 30;
+  }
+    record(pastData[PASTDATA_ROWS-1][0]);
+    Serial.print("Velocity is: ");
+    Serial.println(velocity);
+    bool a = false; // &lt;-- FIX: Replace with real apogee calculation
+    bool b = (pastData[PASTDATA_ROWS-1][0] &lt; 200/*precalculated height*/);
+    bool c = pastData[PASTDATA_ROWS-1][1] - time_0 &lt; emergencyTime; //control
+  } while (false /*a &amp;&amp; b &amp;&amp; c*/);
+
+  myServo.write(90);//the soul purpose of this program
+
+  while (listIndex &lt; 1024) {
+    record(getHeight());
+  }
+
+  //sum with apogee
+}
+
+/*
+records the data
+makes important assumption that the change in height per interval doesnt exceed 100!!
+*/
+void record(float height) {
+  Serial.print("height comparative to liftoff is: ");
+  Serial.println(height, 2); // --- FIX: Print float with 2 decimal places
+  if (listIndex &lt; EEPROM.length()) {
+    EEPROM.put(listIndex, height);
+    listIndex++;
+  }                                                  
+}
+
+/*
+prints all data
+*/
+void printData() {
+  for (int i = 0; i&lt;PASTDATA_ROWS; i++) {
+     Serial.print("Time: ");
+     Serial.print(pastData[i][1], 4);
+     Serial.print(" Height: ");
+     Serial.println(pastData[i][0], 2);
+  }
+}
+
+
+//data trial functions, don't put these in the acuall code
+
+/*
+mane function for these
+@param sample size
+*/
+float dataTrials(int n) {
+  float hSample[n];
+
+  float t_0 = getTime();
+  for (int i = 0; i&lt;n; i++) {
+    hSample[i] = bmp.readAltitude(SEALEVELPRESSURE_HPA) - height_0;
+  }
+  Serial.print("Putting the height into a variable takes ");
+  Serial.print((getTime()-t_0)/n, 4);
+  Serial.println(" seconds.");
+  Serial.println("Average deviation is " + averageDeviation(hSample, n));
+
+}
+
+//chat gpt 🤑
+float averageDeviation(float data[], int n) {
+  if (n &lt;= 0) return 0.0;
+
+  // Step 1: Calculate the mean
+  float sum = 0.0;
+  for (int i = 0; i &lt; n; i++) {
+    sum += data[i];
+  }
+  float mean = sum / n;
+
+  // Step 2: Calculate the average of absolute differences
+  float totalDeviation = 0.0;
+  for (int i = 0; i &lt; n; i++) {
+    totalDeviation += abs(data[i] - mean);
+  }
+
+  return totalDeviation / n;
+}
+
+
+//only in ohio 💀💀💀💀💀💀💀💀💀
+// 👹
+</code></pre></div>
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    
+    
+</body>
+
+</html>

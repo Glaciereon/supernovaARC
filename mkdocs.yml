@@ -4,27 +4,26 @@ theme:
   name: terminal
 
 nav:
-  - Welcome: homepage.md
-
+  - Welcome: index.md
   - Project Coral:
       - Update 1: coral/firstupdate.md
       - Update 2: coral/secondupdate.md
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
+  - Code:
+      - Supernova Second Year:
+          - supernova1.md
+          - supernovafakedatasim.md
+          - teensysdstates.md
+          - menulogging.md
+          - v5ishcleanup.md
+          - kalmanbluetooth.md
+          - v7kalmanrework.md
+          - v8kalmanconstant.md
+          - v9csvlogging.md
+          - v10bailout.md
+      - Codebase: codebase.md
 
-  - code:
-
-    - supernovasecondyear:
-        - supernova1.md
-        - supernovafakedatasim.md
-        - teensysdstates.md
-        - menulogging.md
-        - v5ishcleanup.md
-        - kalmanbluetooth.md
-        - v7kalmanrework.md
-        - v8kalmanconstant.md
-        - v9csvlogging.md
-        - v10bailout.md
-    - codebase.md
 plugins:
+  - search
   - mkdocs-video

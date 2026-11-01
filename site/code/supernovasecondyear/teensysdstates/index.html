@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.8.0">
+     
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>v03_teensy_sd_states - Glaciereon's Doc</title>
+
+
+<link href="../../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../../css/normalize.css" rel="stylesheet">
+<link href="../../../css/terminal.css" rel="stylesheet">
+<link href="../../../css/theme.css" rel="stylesheet">
+<link href="../../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../../css/theme.footer.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="../../../css/palettes/default.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="/" class="no-style">Glaciereon's Doc</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../../../homepage/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Welcome</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                
+                
+                
+                    
+                    
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../homepage/">Welcome</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+        
+        
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Project Coral</span>
+        
+    
+    
+        
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/firstupdate/">Update 1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/secondupdate/">Update 2</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/thirdupdate/">Update 3</a>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../coral/nextsteps/">Next Steps</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+        
+        
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">code</span>
+        
+    
+    
+        
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            
+            
+            <span class="
+        
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">supernovasecondyear</span>
+        
+    
+    </li>
+            
+        
+            
+            
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../../../codebase.md">None</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+       </li>
+        
+    </ul>
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#v03_teensy_sd_states">v03_teensy_sd_states</a></li>
+        
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <div><h1 id="v03_teensy_sd_states">v03_teensy_sd_states</h1>
+<pre><code class="language-cpp">//v3: moved to the teensy with sd card logging, a state machine (preLaunch/preSeparation/postSeparation), a serial menu, and a smoothing filter on height.
+
+/*
+general info
+frequency is 33hz ( 30ms between cycles)
+rollover at 71 mins, don't worry about it
+//implement storing the name in the all roots folder
+// explore the int pin on the bmp
+*/
+
+//libraries
+
+#include &lt;Wire.h&gt;
+#include &lt;SPI.h&gt;
+#include &lt;Adafruit_Sensor.h&gt;
+#include "Adafruit_BMP3XX.h"
+#include &lt;Servo.h&gt;
+#include &lt;SD.h&gt;
+
+//object creation
+
+Adafruit_BMP3XX bmp;
+Servo myServo;
+File myFile;
+
+
+//constants
+
+#define SEALEVELPRESSURE_HPA (1013.25)
+#define PASTDATA_ROWS 16
+//PASTDATA_ROWS has to be even, don't touch if you don't know what you're doing.
+const byte servoButton  = 12;
+const byte servoPin = 4;
+const byte emergencyTime = 6;
+const int chipSelect = BUILTIN_SDCARD;
+
+//vars
+
+float height_0 = 0;
+float velocity = 0;
+float prevH = 1;
+int servoPos = 90;
+byte state = 0;
+byte flushCount = 0;
+float height[PASTDATA_ROWS];
+unsigned long time[PASTDATA_ROWS];
+
+enum States {preLaunch = 0, preSeparation = 1, postSeparation = 2,  communication = 3};
+String fileName = "";
+//setup
+
+void setup() {
+
+  //attachment and begining
+pinMode(13, OUTPUT);  //this is the onboard LED, the second red light that you see
+pinMode(servoButton, INPUT);
+myServo.attach(servoPin);
+Serial.begin(115200);
+
+  //sensor setup
+
+  while (!Serial); //may be iffy on the teensy
+ Serial.println("Adafruit BMP388 / BMP390 test");
+ bmp.setTemperatureOversampling(BMP3_OVERSAMPLING_4X);
+ bmp.setPressureOversampling(BMP3_OVERSAMPLING_4X);
+ bmp.setIIRFilterCoeff(BMP3_IIR_FILTER_COEFF_3);
+ bmp.setOutputDataRate(BMP3_ODR_50_HZ);                 //the rest of the program is based off of these; don't edit
+
+if (!bmp.begin_I2C()) {
+   Serial.println("Could not find a valid BMP3 sensor, check wiring!");
+   while (1) ;
+ }
+ if (!bmp.performReading()) {
+   Serial.println("Failed to perform reading aw hell naw :(");
+   return;
+ }
+Serial.println("sensor nominal");
+myServo.write(90);  // Set servo to initial position
+Serial.println("servo unlocked");
+height_0 = bmp.readAltitude(SEALEVELPRESSURE_HPA); //set initial height for reference of when to blast off.
+
+for (int i = 0; i&lt;PASTDATA_ROWS; i++) {
+  height[i] = i+1;
+  time[i] = i+1; //making the lists 0 cause yk
+}
+  getHeight();
+  getHeight();  //initialization proclamation
+
+digitalWrite(13, HIGH);  // end of setup; two red lights
+}
+
+void loop() {
+ static unsigned long nextSample = micros(); //static means global variable within a function.
+  if (micros() &gt;= nextSample) {
+    nextSample += 30000; //30 ms
+   switch (state) {
+    case communication:
+    communicationProg();
+    break;
+    case preLaunch:
+    preLaunchCycle();
+    break;
+    case preSeparation:
+    preSeparationCycle();
+    break;
+    case postSeparation:
+    postSeparationCycle();
+    break;
+  }
+  }
+  delay(5); //waits a bit at the end of everyloop to prevent board usage, overheating, etc
+}
+/*
+the board stops all processes and communicated with the usb
+*/
+int communicationProg() {
+  Serial.println("Talking sequence initiated. What would you like to do?\n\n 0 - quit, go back to detecting apogee\n1 - lock/unlock servo\n3 - open a new height data file (no spaces please or like anything wild, just letters and _'s\n4 - goon idk");
+  while (Serial.available() &lt;= 0) {
+    delay(5);
+  }
+  int a = (int)Serial.read()-48;
+  while (Serial.available() &gt; 0) {
+    Serial.read();
+  }
+  switch (a) {
+    case 0:
+    state = preLaunch;
+    return 0;
+    break;
+    case 1:
+    if (servoPos == 90) {
+           servoPos = 0;
+    } else {
+           servoPos = 90;
+    }
+    myServo.write(servoPos);
+    break;
+    case 3:
+    newHeightFile();
+    break;
+  }
+
+}
+
+int preLaunchCycle() {
+   height_0Update();
+    unsigned long t = micros();  // returns the time since boot in micro seconds (1,000,000 micro seconds = 1 second)
+    float h = getHeight();
+    updatePastData(t,h);
+    velocity = getVelocity();
+
+    if (h &gt; 10) { //liftoff is greater than 10 meters
+      state = preSeparation;
+      return 0;
+    }
+
+    if (Serial.available() &gt; 0) { //We sent it a message
+      state = communication;
+      return 0;
+    }
+
+    if (buttonPressed()) {  // moves it 90 degrees if button was pressed for .12 seconds
+         if (servoPos == 90) {
+           servoPos = 0;
+         } else {
+           servoPos = 90;
+         }
+    myServo.write(servoPos);
+    delay(200);
+    Serial.println("Servo moved 90 dgrees");
+ }
+
+  return 0;
+}
+
+
+
+int preSeparationCycle() {
+    myFile = SD.open(fileName, FILE_WRITE); //reopens the file
+  static float time_0 = millis()/1000; //time_0 is in seconds
+    unsigned long t = micros();  // returns the time since boot in micro seconds (1,000,000 micro seconds = 1 second)
+    float h = getHeight();
+    if (myFile) {
+      myFile.println("Height in meters off the ground: " + (String)h + " time in seconds since liftoff: " + (String)(millis()/1000 - time_0));
+    }
+    updatePastData(t,h);
+    velocity = getVelocity();
+    bool a = false; // &lt;-- FIX: Replace with real apogee calculation
+    bool b = h &lt; 200;   //cutoff height
+    bool c = t/1000 - time_0 &lt; emergencyTime; //control
+    if (a &amp;&amp; b &amp;&amp; c) {
+      myServo.write(90);//the soul purpose of this program
+      state = postSeparation;
+    }
+  return 0;
+}
+
+int postSeparationCycle() {
+    float h = getHeight();
+  float time_0 = millis()/1000; // second
+  if (millis()/1000 - time_0 &lt; 40) {
+    if (myFile) {
+      myFile.println("Height in meters off the ground: " + (String)h + " time in seconds since liftoff: " + (String)(millis()/1000 - time_0));
+    }
+  } else {
+    myFile.close(); //STOP
+    while (true) {
+      delay(5);
+    }
+  }
+  return 0; //i can make the button do sum
+}
+//returns true if the button is pressed, false otherwise
+bool buttonPressed() {
+ if (digitalRead(servoButton) != HIGH) {
+   delay(25);
+   if (digitalRead(servoButton) != HIGH) {
+     delay(25);  // this is for accidental presses or accidental contact
+     if (digitalRead(servoButton) != HIGH) {
+       delay(100);
+       if (digitalRead(servoButton) != HIGH) {
+         Serial.println("Button pressed");
+         delay(20);
+         return true;
+       }
+     }
+   }
+ }
+ return false;
+}
+//updates initial height every 5 mins
+void height_0Update() {
+  static unsigned long nextSample1 = millis();
+  if (millis() &gt;= nextSample1) {
+    nextSample1 += 300000;// 5 mins
+    if(bmp.performReading()){
+    height_0 = bmp.readAltitude(SEALEVELPRESSURE_HPA);  //reset initial height to account for slight weather changes
+} else {
+    Serial.println("BMP read failed");
+}
+  }
+}
+//Returns height relative to startup position.
+float getHeight() {
+  // experimental features
+  double filterCoeficciant = .7; //range from 0 to 1. Closer to 1 = reacts faster but less smooth, Closer to 0 = smoother but lags behind real altitude
+
+   if (!bmp.performReading()) {
+    myFile = SD.open(FileName, FILE_WRITE);
+    Serial.println("BMP read failed");
+
+    return prevH; // fallback: return last valid height
+  } //the sensor makes a reading
+
+  float h = (bmp.readAltitude(SEALEVELPRESSURE_HPA) - height_0)*filterCoeficciant + prevH*(1-filterCoeficciant); //h_n(1-coeficciant) + h_n-1*coeficciant
+  prevH = h;
+  return h;
+}
+//🧽
+void updatePastData (unsigned long t, float h){
+    for (int i = 0; i &lt; PASTDATA_ROWS - 1; i++) {
+    time[i] = time[i + 1];
+    height[i] = height[i + 1];
+  }
+  time[PASTDATA_ROWS - 1] = t;
+  height[PASTDATA_ROWS - 1] = h;
+}
+/*
+what it's all about
+returns instantanious velocity in m/s
+*/
+float getVelocity() {
+  long unsigned d_T = time[PASTDATA_ROWS-1] -time[0]; //difference in newest to oldest data in micros
+  float botHeightSum = 0;
+  float topHeightSum = 0;
+
+  for (int i = 0; i&lt;PASTDATA_ROWS/2; i++) {
+    botHeightSum += height[i];
+    topHeightSum += height[i+PASTDATA_ROWS/2];
+  }
+float avgBot = botHeightSum / (PASTDATA_ROWS / 2); //average here for sake of avoiding rounding errors
+float avgTop = topHeightSum / (PASTDATA_ROWS / 2);
+float deltaHeight = avgTop - avgBot;
+float dt = d_T / 1000000.0;  // convert microseconds to seconds 
+return deltaHeight / dt;     // velocity in m/s
+}
+
+void newHeightFile() {
+
+  if (!SD.begin(chipSelect)) {
+    Serial.println("Initialization failed!");
+    return;
+  }
+  Serial.println("Card initialized\ninput name of new file: ");
+
+
+  while (Serial.available() &lt;= 0) {
+    delay(5);
+  }
+  fileName = "";
+  while (Serial.available() &gt; 0) {
+      fileName = Serial.readStringUntil('\n');
+      fileName.trim(); // strips \n, \r, spaces
+  }
+
+  myFile = SD.open(fileName, FILE_WRITE);
+  if (myFile) {
+    Serial.println("File created successfully.");
+  } else {
+    Serial.println("Error creating file.");
+  }
+  myFile.close(); // this is for the file's safety
+
+}
+</code></pre></div>
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    
+    
+</body>
+
+</html>
