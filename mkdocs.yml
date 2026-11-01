@@ -12,7 +12,7 @@ nav:
       - Update 3: coral/thirdupdate.md
       - Next Steps: coral/nextsteps.md
   - Supernova Second Year:
-      - supernova1: code/supernovasecondyear/supernova1.md
+      - supernovav1: code/supernovasecondyear/supernovav1.md
       - supernovafakedatasim: code/supernovasecondyear/supernovafakedatasim.md
       - teensysdstates: code/supernovasecondyear/teensysdstates.md
       - menulogging: code/supernovasecondyear/menulogging.md
@@ -23,7 +23,7 @@ nav:
       - v9csvlogging: code/supernovasecondyear/v9csvlogging.md
       - v10bailout: code/supernovasecondyear/v10bailout.md
   - Codebase: code/codebase.md
-  
+
 plugins:
   - search
   - mkdocs-video
