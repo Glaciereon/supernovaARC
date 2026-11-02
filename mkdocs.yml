@@ -1,9 +1,6 @@
 site_name: "Glaciereon's Doc"
 site_url: https://glaciereon.github.io/supernovaARC/
 
-site_name: "Glaciereon's Doc"
-site_url: https://glaciereon.github.io/supernovaARC/
-
 theme:
   name: material
   font:
@@ -46,11 +43,10 @@ nav:
       - v8 - tuned constants: code/supernovasecondyear/v8kalmanconstants.md
       - v9 - CSV data logging: code/supernovasecondyear/v9csvlogging.md
       - v10 - bailout (code used at launch): code/supernovasecondyear/v10bailout.md
-    - Coral Code: 
-      - v1 - initial servo code: code/reefcode/r01_servo_test_menu.md
-      - v2 - improved servo code: code/reefcode/r02_timed_servo_sequence.md
-      - v3 - launch code (much more complex): code/reefcode/r03_reefing_kalman_state_machine.md
-
+  - Coral Code: 
+    - v1 - initial servo code: code/reefcode/r01_servo_test_menu.md
+    - v2 - improved servo code: code/reefcode/r02_timed_servo_sequence.md
+    - v3 - launch code (much more complex): code/reefcode/r03_reefing_kalman_state_machine.md
 plugins:
   - search
   - mkdocs-video
