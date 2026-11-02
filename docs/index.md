@@ -11,5 +11,6 @@ Two years of rocket engineering for the American Rocketry Challenge (ARC), where
 1. [Supernova Year 2](supernova/supernovayear2.md) for the final design and results
 2. [Coral Update 3](coral/thirdupdate.md) for the reefing test flight
 3. [Final Supernova launch code](code/supernovasecondyear/v10bailout.md)
+4. [Coral launch code](code/reefcode/r03_reefing_kalman_state_machine.md)
 
 All the code is on this site as a series of versions. The [codebase note](code/codebase.md) explains how it's organized and why. 
