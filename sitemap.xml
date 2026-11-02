@@ -2,110 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/codebase/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
+    </url>
+    <url>
+         <loc>https://glaciereon.github.io/supernovaARC/code/reefcode/r01_servo_test_menu/</loc>
+         <lastmod>2026-11-02</lastmod>
+    </url>
+    <url>
+         <loc>https://glaciereon.github.io/supernovaARC/code/reefcode/r02_timed_servo_sequence/</loc>
+         <lastmod>2026-11-02</lastmod>
+    </url>
+    <url>
+         <loc>https://glaciereon.github.io/supernovaARC/code/reefcode/r03_reefing_kalman_state_machine/</loc>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e01/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e02/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e03/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e04/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e05/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e06/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e07/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e08/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovafirstyear/e09/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/kalmanbluetooth/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/menulogging/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/supernovafakedatasim/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/supernovav1/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/teensysdstates/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/v10bailout/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/v5ishcleanup/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/v7kalmanrework/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/v8kalmanconstants/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/code/supernovasecondyear/v9csvlogging/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/coral/firstupdate/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/coral/nextsteps/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/coral/secondupdate/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/coral/thirdupdate/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/supernova/supernovayear1/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
     <url>
          <loc>https://glaciereon.github.io/supernovaARC/supernova/supernovayear2/</loc>
-         <lastmod>2026-11-01</lastmod>
+         <lastmod>2026-11-02</lastmod>
     </url>
 </urlset>
