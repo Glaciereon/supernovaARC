@@ -34,7 +34,7 @@ We were able to get in 10 flights this year in addition to our qualification fli
 
 ## Organization
 
-In the previous year, we had very few launches as aforementioned. In part this was due to our terrible organization and time management, but additionally we did not have our own launch rail nor did we have a comprehensive list of all items needed for launch. This year, we changed this around by having our own custom launch rail and a 'launch box' with all the necessary equipment. 
+In the previous year, we had very few launches as aforementioned. In part this was due to our terrible organization and time management, but additionally we did not have our own launch rail nor did we have a comprehensive list of all items needed for launch. This year, we changed this around by having our own custom launch rail and a 'launch box' with all the necessary equipment.
 
 ![organizedstuff](../images/organizedlaunchmaterials.jpeg)
 
