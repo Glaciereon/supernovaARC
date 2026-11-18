@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#full-contributions" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1390,6 +1395,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Contributions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1407,6 +1432,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-supernova" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Supernova
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-coral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Coral
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1437,6 +1503,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-supernova" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Supernova
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-coral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Coral
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1453,9 +1551,31 @@
 
 
 
-  <h1>Full Contributions</h1>
-
-<p>name this contributions.md</p>
+<div><h1 id="full-contributions">Full Contributions</h1>
+<p>Both projects were built mostly by two people: me and my friend and teammate Aleksei Sergeev. The split was done in a fairly common way: I handled the physical side (design, CAD, and fabrication) and Aleksei wrote the code. I can follow the software closely enough to explain how it works (Kalman Filter, state machine), but vast majority of the code is his</p>
+<h2 id="project-supernova">Project Supernova</h2>
+<p>Supernova was our school club's American Rocketry Challenge rocket, and most of the work on it came from the two of us</p>
+<p><strong>Gleb Kozlov (my) Contributions:</strong></p>
+<ul>
+<li>Came up with the original "bowtie" separation latch, which holds the two halves together until apogee and then rotates to release them</li>
+<li>When the first launch barely separated, added a rubber-band-loaded "push rod" (separates the two halves) and anti-rotation teeth (prevents two halves from rotating against each other when bowtie rotates)</li>
+<li>In Year 2, replaced the push rod with nested springs, switched to a slanted rotation surface for less difficult separation, and moved to a way beefier 9 kg/cm servo. Additionally changed anti-rotation teeth to different shape profile (before was equilateral triangle, changed to quadrilateral)</li>
+<li>Designed the snap-fit electronics container, important for electronics organization</li>
+<li>Did almost all fabrication: 3D printing, cutting body tubes, epoxying, wiring and soldering. 3D printing included a variety of material testing, using materials like PLA for testing and quick iterations while also learning about filaments like Kevlar-reinforced PLA and nylon filaments for their exceptional strength (PA-CF and PA-GF)</li>
+</ul>
+<p><strong>What Aleksei did:</strong> wrote the flight software in both years, including the Kalman-filter apogee prediction that flew at launch (v10). His contribution cannot be overstated enough</p>
+<h2 id="project-coral">Project Coral</h2>
+<p>Coral was just Aleksei and me, in my basement (outside club), building over the summer to fix the descent-time problem because prior we had been relying on wind being favorable</p>
+<p><strong>What I did:</strong></p>
+<ul>
+<li>Designed and built the reefing mechanism, taking the winch through a multitude of different versions before landing on the final spool</li>
+<li>Designed the test rocket in OpenRocket and CAD, including the fin can and the transition channel that keeps the shock cord from tangling</li>
+<li>Basic terminal velocity calculations and predictions</li>
+<li>Wiring/soldering of the flight circuit</li>
+</ul>
+<p><strong>What Aleksei did:</strong> Once again, he wrote the control code (r01–r03), including the final reefing state machine</p>
+<p><strong>What we did together:</strong> built the parachute, ran the drop and fan tests, and launched the full-scale test on August 15, 2026. Descent speed went from about 2 m/s to about 5.5 m/s once the winching started</p>
+<p>All of my CAD is linked on the <a href="../cadfile/">CAD and 3D-design</a> page</p></div>
 
 
 
