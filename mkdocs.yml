@@ -47,6 +47,9 @@ nav:
     - v1 - initial servo code: code/reefcode/r01_servo_test_menu.md
     - v2 - improved servo code: code/reefcode/r02_timed_servo_sequence.md
     - v3 - launch code (much more complex): code/reefcode/r03_reefing_kalman_state_machine.md
+  - Contributions/Data:
+    - CAD and 3D-design: cadfile.md
+    - Full Contributions: contributions.md 
 plugins:
   - search
   - mkdocs-video

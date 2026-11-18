@@ -1,10 +1,10 @@
 # Welcome to Project Supernova / Project Coral!
 
-Two years of rocket engineering for the American Rocketry Challenge (ARC), where a rocket has to hit an exact target altitude and land inside a set time window with its payload intact.
+Two years of aerospace engineering for the American Rocketry Challenge (ARC), where a rocket has to hit an exact apogee altitude and land inside a set interval of time with the payload (1-2 eggs) intact. 
 
-**Project Supernova** is an ascent control mechanism. An onboard flight computer (Nano) predicts the rocket's apogee in flight and releases a parachute at the right moment so the rocket peaks at the target altitude. Year 1 built the separation mechanism. Year 2 added a Kalman filter for apogee prediction and went from 3 flights to 10 plus qualification flights.
+**Project Supernova**: Lexington High School’s American Rocketry Challenge rocket. I created the original “bowtie” (separation) design and led fabrication, which included 3D printing, wiring and soldering, and overall airframe assembly. My dear friend and teammate, Aleksei Sergeev, wrote the flight software, including Kalman-filter apogee prediction. Our total number of flights 2nd year was 10+ flights; we missed national qualification by 6 points corresponding to 1.5s of descent time.
 
-**Project Coral** is descent control, the second half of ARC scoring. A servo winches a line around the parachute to shrink it mid-flight and adjust descent speed. On its test flight, descent speed went from about 2 m/s to about 5.5 m/s once the winch started.
+**Project Coral**: An independent project with Aleksei, outside the team, built to fix our descent-time problem. I designed and built the servo-winch parachute-reefing mechanism (which I named coral - as in coral reef); Aleksei once again wrote the majority of the control code onboard the Arduino Nano. On the first test flight, the descent rate shifted from 2 to ~5.5 m/s once reefing started.
 
 **Quicky Summary/Skimming?** Start here:
 
@@ -13,4 +13,4 @@ Two years of rocket engineering for the American Rocketry Challenge (ARC), where
 3. [Final Supernova launch code](code/supernovasecondyear/v10bailout.md)
 4. [Coral launch code](code/reefcode/r03_reefing_kalman_state_machine.md)
 
-All the code is on this site as a series of versions. The [codebase note](code/codebase.md) explains how it's organized and why. 
+All the code is on this site as a series of versions. The [codebase note](code/codebase.md) explains the organization/lack thereof. 
