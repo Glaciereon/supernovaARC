@@ -1,6 +1,6 @@
 This, along with the bowtie, is my main contribution to this project. Though I was present alongside both the mechanism creation and the coding, physical features are far more my speed. This included soldering, body tube cutting, 3D-printed part manufacturing and CADding, spring rigging, lubrication, etc. 
 
-It would be far too tedious to include multiple angles of every single part I CADded, so instead I will include URLS to the directories of the online CAD software we have been using, Onshape. I apologize in advance for the earlier years being more messy, the organization got marginally better with years but I hope to improve my version history/editing much more in professional engineering environments.
+It would be far too tedious to include multiple angles of every single part I CADded, so instead I will include URLS to the directories of the online CAD software we have been using, Onshape. 
 
 
 Apollo 2024-2025 (Supernova Year 1): 
@@ -11,11 +11,13 @@ Apollo 2024-2025 (Supernova Year 1):
 
 Gemini 2025-2026 (Supernova Year 2):
 
-[Guided Design year 2](https://cad.onshape.com/documents/5725ef6e4ddbce9d8ed8a05c/w/9101cc94c5f589dfa034097a/e/b87c75dc963c28f4bc41b0c2?renderMode=0&uiState=6afdd411ce65765e85183ed4)
+[Guided Design year 2](https://cad.onshape.com/documents/5725ef6e4ddbce9d8ed8a05c/w/9101cc94c5f589dfa034097a/e/011eb6f6e1a663e2dcb2372b?renderMode=0&uiState=6afe3a06ccb0cdc47c0fa769)
+
+most important tab is "V2-springs", "v1-push rod" is a copy of the previous year as a reference
 
 
 [Project Coral (Summer Work)](https://cad.onshape.com/documents/5725ef6e4ddbce9d8ed8a05c/w/9101cc94c5f589dfa034097a/e/b87c75dc963c28f4bc41b0c2?renderMode=0&uiState=6afdd411ce65765e85183ed4)
-(main tab is "guided after qual")
+(main tab is "v3 - guided after qual")
 
 
 

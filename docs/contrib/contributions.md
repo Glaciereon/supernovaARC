@@ -6,7 +6,7 @@ Both projects were built mostly by two people: me and my friend and teammate Ale
 
 Supernova was our school club's American Rocketry Challenge rocket, and most of the work on it came from the two of us
 
-**Gleb Kozlov (my) Contributions:**
+**My Contributions:**
 
 - Came up with the original "bowtie" separation latch, which holds the two halves together until apogee and then rotates to release them
 - When the first launch barely separated, added a rubber-band-loaded "push rod" (separates the two halves) and anti-rotation teeth (prevents two halves from rotating against each other when bowtie rotates)
@@ -14,7 +14,7 @@ Supernova was our school club's American Rocketry Challenge rocket, and most of 
 - Designed the snap-fit electronics container, important for electronics organization
 - Did almost all fabrication: 3D printing, cutting body tubes, epoxying, wiring and soldering. 3D printing included a variety of material testing, using materials like PLA for testing and quick iterations while also learning about filaments like Kevlar-reinforced PLA and nylon filaments for their exceptional strength (PA-CF and PA-GF)
 
-**What Aleksei did:** wrote the flight software in both years, including the Kalman-filter apogee prediction that flew at launch (v10). His contribution cannot be overstated enough
+**What Aleksei did:** wrote the flight software in both years, including the Kalman-filter apogee prediction that flew at launch (v10). His contribution was critical to this project
 
 ## Project Coral
 

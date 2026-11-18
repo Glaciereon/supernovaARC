@@ -6,7 +6,7 @@ Two years of aerospace engineering for the American Rocketry Challenge (ARC), wh
 
 **Project Coral**: An independent project with Aleksei, outside the team, kind of like Supernova but active descent control. I designed and built the servo-winch parachute-reefing mechanism; Aleksei once again wrote the majority of the control code onboard the Arduino Nano. On the first test flight, the descent rate increased from 2 to ~5.5 m/s once reefing started
 
-**Quicky Summary** Start here:
+**Quick Summary** Start here:
 
 1. [Supernova Year 2](supernova/supernovayear2.md) for the final design and results
 2. [Coral Update 3](coral/thirdupdate.md) for the reefing test flight
