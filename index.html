@@ -1315,6 +1315,116 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributions/Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributions/Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cadfile.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD and 3D-design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributions.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Contributions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1351,9 +1461,9 @@
 
 
 <div><h1 id="welcome-to-project-supernova-project-coral">Welcome to Project Supernova / Project Coral!</h1>
-<p>Two years of rocket engineering for the American Rocketry Challenge (ARC), where a rocket has to hit an exact target altitude and land inside a set time window with its payload intact.</p>
-<p><strong>Project Supernova</strong> is an ascent control mechanism. An onboard flight computer (Nano) predicts the rocket's apogee in flight and releases a parachute at the right moment so the rocket peaks at the target altitude. Year 1 built the separation mechanism. Year 2 added a Kalman filter for apogee prediction and went from 3 flights to 10 plus qualification flights.</p>
-<p><strong>Project Coral</strong> is descent control, the second half of ARC scoring. A servo winches a line around the parachute to shrink it mid-flight and adjust descent speed. On its test flight, descent speed went from about 2 m/s to about 5.5 m/s once the winch started.</p>
+<p>Two years of aerospace engineering for the American Rocketry Challenge (ARC), where a rocket has to hit an exact apogee altitude and land inside a set interval of time with the payload (1-2 eggs) intact. </p>
+<p><strong>Project Supernova</strong>: Lexington High School’s American Rocketry Challenge rocket. I created the original “bowtie” (separation) design and led fabrication, which included 3D printing, wiring and soldering, and overall airframe assembly. My dear friend and teammate, Aleksei Sergeev, wrote the flight software, including Kalman-filter apogee prediction. Our total number of flights 2nd year was 10+ flights; we missed national qualification by 6 points corresponding to 1.5s of descent time.</p>
+<p><strong>Project Coral</strong>: An independent project with Aleksei, outside the team, built to fix our descent-time problem. I designed and built the servo-winch parachute-reefing mechanism (which I named coral - as in coral reef); Aleksei once again wrote the majority of the control code onboard the Arduino Nano. On the first test flight, the descent rate shifted from 2 to ~5.5 m/s once reefing started.</p>
 <p><strong>Quicky Summary/Skimming?</strong> Start here:</p>
 <ol>
 <li><a href="supernova/supernovayear2/">Supernova Year 2</a> for the final design and results</li>
@@ -1361,7 +1471,7 @@
 <li><a href="code/supernovasecondyear/v10bailout/">Final Supernova launch code</a></li>
 <li><a href="code/reefcode/r03_reefing_kalman_state_machine/">Coral launch code</a></li>
 </ol>
-<p>All the code is on this site as a series of versions. The <a href="code/codebase/">codebase note</a> explains how it's organized and why. </p></div>
+<p>All the code is on this site as a series of versions. The <a href="code/codebase/">codebase note</a> explains the organization/lack thereof. </p></div>
 
 
 
