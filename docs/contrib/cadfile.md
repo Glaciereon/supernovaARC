@@ -16,8 +16,8 @@ Gemini 2025-2026 (Supernova Year 2):
 most important tab is "V2-springs", "v1-push rod" is a copy of the previous year as a reference
 
 
-[Project Coral (Summer Work)](https://cad.onshape.com/documents/5725ef6e4ddbce9d8ed8a05c/w/9101cc94c5f589dfa034097a/e/b87c75dc963c28f4bc41b0c2?renderMode=0&uiState=6afdd411ce65765e85183ed4)
-(main tab is "v3 - guided after qual")
+[Project Coral (Summer Work)](https://cad.onshape.com/documents/5725ef6e4ddbce9d8ed8a05c/w/9101cc94c5f589dfa034097a/e/f0dc86e917ad8dec570df2ab)
+(main tab is "v3 - guided after qual". Lots of contribution in both "parachute reefing testing", with a small payload, and "ng with reefing test 1", an actual launched rocket.)
 
 
 
