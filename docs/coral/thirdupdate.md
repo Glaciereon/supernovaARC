@@ -59,6 +59,8 @@ I know additionally that this system worked because of the data collected on the
 
 # Results
 
+(scroll up for full build log)
+
 ![graph](../images/graphimportant.jpeg)
 
 This graph shows that at the time of winching (the process by which the spool rotates) the speed of the rocket was around 2 m/s. To be noted, the rocket was coasting at around this speed for a while before. Then, following the winching, the rocket went up all the way to going between 5 and 6 m/s, for an average of 5.5 m/s. This is an increase of 175% in speed of descent, which is quite exceptional. I believe this to be quite an accomplishment and if implemented with Supernova could result in extremely competitive scores for ARC. 
